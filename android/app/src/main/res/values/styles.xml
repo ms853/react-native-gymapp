@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Here I specify the background image by calling the xml file in my drawable folder-->
+        <item name="android:windowBackground">@drawable/background_splash</item>
+    </style>
+
+</resources>
