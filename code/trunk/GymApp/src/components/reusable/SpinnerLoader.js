@@ -1,14 +1,15 @@
 import React from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { View } from 'react-native';
+import Spinner from 'react-native-spinkit';
 
-const SpinnerLoader = ({ size, style }) => {
+const SpinnerLoader = ({ style, color, size, type }) => {
   return (
     <View> 
-      <ActivityIndicator 
-      size={size || 'large'} 
-      animating
-      style = {style}
-      color="#0000ff"
+      <Spinner 
+        style={style}
+        color={color}
+        size={size}
+        type={type}
       />
     </View>
   );
@@ -21,6 +22,14 @@ const SpinnerLoader = ({ size, style }) => {
 //     alignItems: 'center'
 //   }
 // };
+/*
+      <ActivityIndicator 
+      size={size || 'large'} 
+      animating
+      style = {style}
+      color="#0000ff"
+      />
+*/
 
 export { SpinnerLoader };
 

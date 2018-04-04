@@ -10,8 +10,11 @@ import {
     PASSWORD_INPUT_CHANGED,
     LOGIN_USER,
     LOGIN_USER_FAIL,
-    USER_LOGIN_SUCCESS
+    USER_LOGIN_SUCCESS,
+    USER_LOGOUT,
+    FACEBOOK_LOGIN
  } from "../actions/types";
+ 
 
 const initialState = {
     email: '',
@@ -29,7 +32,7 @@ export default (state = initialState, action) => {
         case EMAIL_INPUT_CHANGED:
             return {...state, email: action.payload };
 
-        case PASSWORD_INPUT_CHANGED:
+        case PASSWORD_INPUT_CHANGED: 
             return {...state, password: action.payload };
         case LOGIN_USER:
         //set loading to true will display the spinner
@@ -39,8 +42,18 @@ export default (state = initialState, action) => {
             return { ...state, ...initialState, user: action.payload };
         
         case LOGIN_USER_FAIL:
-            return { ...state, email: '', password: '', error: 'Authentication Failed. Check Your Email or Password.', loading: false };
-                        
+            alert('Login Failed!');
+            return { ...state, email: '', password: '', error: 'Invalid Input! Check your email or password.', 
+            loading: false,
+        };
+        
+        case USER_LOGOUT: 
+            alert('You have logged out!');
+            return { ...state, user: action.payload };
+        
+        case FACEBOOK_LOGIN:
+            return {...state, user: action.payload };    
+            
         default:
             return state;
     }
