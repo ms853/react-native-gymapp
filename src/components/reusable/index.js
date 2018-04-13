@@ -9,3 +9,4 @@ export * from './CardSection';
 export * from './Input';
 export * from './SpinnerLoader';
 export * from './Button';
+export * from './NumberInput';
