@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GymApp</string>
+    <string name="app_name">My Trainer</string>
     <string name="facebook_app_id">949762981866519</string>
     <string name="fb_login_protocol_scheme">fb949762981866519</string>
 </resources>
