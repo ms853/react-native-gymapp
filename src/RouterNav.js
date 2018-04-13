@@ -13,8 +13,9 @@ import forgotPass from './components/auth/forgotPass';
 import passReset from './components/auth/passReset';
 import Home from "./components/main/Home";
 import Profile from "./components/main/Profile";
-import CameraModal from './components/main/CameraModal'; 
+import CameraScene from "./components/main/CameraScene";
 import CreateWorkoutPlanner from "./components/main/CreateWorkoutPlanner";
+
 
 const tabIcon = ({ iconName }) => {
     return <Icon name="rocket" size={30} color="#900" />;
@@ -59,10 +60,10 @@ const RouterNav = () => {
                     </Scene>
                 </Scene>
                 <Scene
-                    key="cameraModal"
+                    key="cameraScene"
                     title="Camera"
-                    component={CameraModal}
-                    direction="vertical"
+                    component={CameraScene}
+                    //direction="vertical"
                     
                 />
 
