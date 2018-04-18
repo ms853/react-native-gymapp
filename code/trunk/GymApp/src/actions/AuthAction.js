@@ -10,16 +10,7 @@ import {
     LOGIN_USER_FAIL,
     USER_LOGIN_SUCCESS,
     USER_LOGOUT, 
-    FACEBOOK_LOGIN,
-    REG_EMAIL_INPUT_CHANGED,
-    REG_PASSWORD_INPUT_CHANGED, 
-    PT_CHECKED,
-    PT_UNCHECKED,
-    REGISTER_UPDATE,
-    REGISTER_USER,
-    REGISTER_FAIL,
-    REGISTER_SUCCESS,
-    SAVE_USER_INFO_SUCCESS
+    FACEBOOK_LOGIN
 } from "./types";
 
 // -------- Here I have Action Creators which are responsible for handelling the user login -----
@@ -90,6 +81,7 @@ const loginUserSuccess = (dispatch, user) => {
 
 //Social/Third Party authentication with Facebook
 export const facebookLogin = (dispatch, user) => {
+    
     return (dispatch) => {
         dispatch({ type: FACEBOOK_LOGIN, payload: user});
         try{
@@ -125,115 +117,5 @@ export const facebookLogin = (dispatch, user) => {
         
     };
 };
-
-
-// ----- Here are action creators that will handle the registration of the user. -------
-
-//Two methods responsible for updating the user input in the signup form. 
-export const registerUpdate = ({ prop, value }) => {
-    return {
-        type: REGISTER_UPDATE,
-        //Returns a key interpulation - values determined through runtime.
-        payload: { prop, value }
-    };
-};
-
-export const regEmailChanged = (text) => {
-    
-    return {
-        type: REG_EMAIL_INPUT_CHANGED,
-        payload: text
-    };
-};
-
-export const regPasswordChanged = (text) => {
-    return {
-        type: REG_PASSWORD_INPUT_CHANGED,
-        payload: text
-    };
-};
-
-
-export const regPTChecked = (value) => {
-    return {
-        type: PT_CHECKED,
-        payload: value
-    }
-}
-
-export const regPTUnChecked = (value) => {
-    return {
-        type: PT_UNCHECKED,
-        payload: value
-    }
-}
-
-
-export const registerUser = ({email, password, fname, sname, phone, gender, pTChecked}) => {
-    //get currentUser Object
-    const db = firebase.database();
-   
-    //console.log(email);
-    return(dispatch) => {
-        dispatch({ type: REGISTER_USER });
-        console.log("My database ->" + firebase);
-
-        //Create a new user account 
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then((user) => {
-                //user = firebase.auth().currentUser;
-                console.log(user);
-               // db.ref(`/users/${user.uid}`).push({hi: 'hi'})
-                db.ref(`/users/${user.uid}`).push({
-                     email, fname, sname, phone, gender, pTChecked 
-                })
-            })
-            .then((user) => registerUserSuccess(dispatch, user))
-            .catch((error) => alert(error));   
-            
-           
-    };
-};
-
-const registerUserFail = (dispatch) => {
-    dispatch({ type: REGISTER_FAIL });
-}
-  
-
-const registerUserSuccess = (dispatch, user) => {
-    console.log('About to register the user!');
-   
-        dispatch({
-            type: REGISTER_SUCCESS, payload: user,
-        });
-        //console.log("This is the current user ->" + user);
-        
-        //console.log("This is the current user ->2" + user); 
-    
-    //Once logged in it will direct me to the main page.
-    Actions.main();
-};
-
-//method for saving user details once they are authenticated!
-// export const saveNewUserDetails = ({ email, fname, sname, phone, gender, pTChecked, role }) =>{
-//     console.log("saveNewUserDetails");
-    
-//     //initialise reference for the database. 
-//     const db = firebase.database();
-
-//     return(dispatch) => {
- 
-//         //debugger;
-//         console.log(currentUser.uid);
-//         db.ref(`/users/${currentUser.uid}/user_info`).push({ hello: 'hi'})
-//         //db.ref(`/users/${currentUser.uid}/user_info`)
-//         //.push({ email, fname, sname, phone, gender, pTChecked, role })
-
-//         .then(() => { //here I dispatch the action that has been invoked. 
-//             dispatch({type: SAVE_USER_INFO_SUCCESS});
-//         }); 
-        
-//     };
-// };
 
 
