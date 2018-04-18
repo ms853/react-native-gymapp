@@ -8,15 +8,11 @@ export const USER_LOGIN_SUCCESS = "login_successful";
 export const USER_LOGOUT = "logout_successful";
 export const FACEBOOK_LOGIN = "login_with_facebook";
 
-//Action Types for Registration 
-export const NAME_INPUT_CHANGED = "name_changed";
-export const REG_EMAIL_INPUT_CHANGED = "signup_email_changed";
-export const REG_PASSWORD_INPUT_CHANGED = "signup_password_changed";
-export const REGISTER_USER = "registering_user";
-export const REGISTER_FAIL = "failed_to_register";
-export const REGISTER_SUCCESS = "successfully_registered_new_account";
-export const SAVE_USER_INFO_SUCCESS = "successfully_saved_new_user_info";
-export const REGISTER_UPDATE = "update_reg_form_inputs";
-export const PT_CHECKED = "personal_trainer_selected";
-export const PT_UNCHECKED = "personal_trainer_unchecked"; 
+//Action Types variables for recording exercises
+export const EX_INPUT_CHANGED = "create_exercise_input_changed";
+//export const NUM_SETS_INPUT_CHANGED = "number_of_sets_changed";
+//export const NUM_REPS_INPUT_CHANGED = "number_of_reps_changed";
+export const ADD_EXERCISE = "adding_exercise";
+export const ADD_EXERCISE_SUCCESS = "successfully_added_exercise";
+export const ADD_EXERCISE_FAIL = "adding_exercise_failed";
 
