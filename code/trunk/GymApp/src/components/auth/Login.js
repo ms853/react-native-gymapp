@@ -101,9 +101,9 @@ class Login extends Component {
                             value={this.props.password}
                             />
                             </CardSection>
-                            <CardSection>
-                                <Button onPress={this._loginFB.bind(this)}>Login with Facebook</Button>
-                            </CardSection>
+                           
+                                <RkButton rkType="xlarge" onPress={this._loginFB.bind(this)}>Login with Facebook</RkButton>
+                            
                             <CardSection>
                                 <Text>Don't have an account? </Text>    
                                 <TouchableOpacity onPress={() => Actions.register()}>
