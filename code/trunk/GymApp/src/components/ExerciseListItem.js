@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Text, View, TouchableWithoutFeedback} from 'react-native';
-import { CardSection } from '../components/reusable'
+import { CardSection } from './reusable';
 
 class ExerciseListItem extends Component{
     
