@@ -4,7 +4,7 @@ import NumericInput, { calcSize } from "react-native-numeric-input";
 
 //Functional component for numeric inputs. 
 //the calcSize variable is responsible for a responsive layout.
-const NumberInput = ({ label, type, value, onChangeNumber, height, width, style }) => { 
+const NumberInput = ({ label, type, value, onChangeNumber, height, width, style, valueType, step }) => { 
     
     const { containerStyle, labelStyle } = styles;
     return (
@@ -19,6 +19,8 @@ const NumberInput = ({ label, type, value, onChangeNumber, height, width, style 
                 totalWidth={calcSize(width)} 
                 totalHeight={calcSize(height)} 
                 iconStyle={style}
+                valueType={valueType} //will determine the number type (e.g. valueType="real" is 0.5)
+                step={step} //indicates how it should be incremented. 
             />
         
         </View>
@@ -37,7 +39,7 @@ const styles = {
     },
     
     labelStyle: {
-        fontSize: 17,
+        fontSize: 16,
         flex: 1
     },
 
