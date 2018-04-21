@@ -42,7 +42,7 @@ export default (state = initialState, action) => {
             return { ...state, ...initialState, user: action.payload };
         
         case LOGIN_USER_FAIL:
-            alert('Login Failed!');
+            alert('Invalid Email or Password!');
             return { ...state, email: '', password: '', error: 'Invalid Input! Check your email or password.', 
             loading: false,
         };

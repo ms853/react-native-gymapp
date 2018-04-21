@@ -14,7 +14,8 @@ import passReset from './components/auth/passReset';
 import Home from "./components/main/Home";
 import Profile from "./components/main/Profile";
 import CameraScene from "./components/main/CameraScene";
-import CreateWorkoutPlanner from "./components/main/CreateWorkoutPlanner";
+import CreateWorkoutForm from "./components/main/CreateWorkoutForm";
+import WorkoutList from "./components/main/WorkoutList";
 
 
 const tabIcon = ({ iconName }) => {
@@ -26,6 +27,7 @@ const RouterNav = () => {
     return (
         <Router>
             <Scene key="root" hideNavBar>
+                
                 <Scene key="auth" hideNavBar>
                     <Scene key="login" component={Login} initial />
                     <Scene key="register" component={Register}  />
@@ -48,9 +50,12 @@ const RouterNav = () => {
                     </Scene>
                     
                     <Scene key="CreateWorkout" title="Create Workout" icon={tabIcon}> 
-                        <Scene key="createExercise" component={CreateWorkoutPlanner} title="Create Your Workout" />
+                        <Scene key="createExercise" component={CreateWorkoutForm} title="Create Your Workout" />
                     </Scene>
-                    
+                   
+                    {/*Component for workout list*/}
+                    <Scene key="workoutList" title="My Workout List" component={WorkoutList}/>
+
                     <Scene key="profilePage" title="My Profile" icon={tabIcon} >
                             <Scene 
                                 key="profile" 
@@ -58,13 +63,16 @@ const RouterNav = () => {
                                 title="My Profile" 
                             />
                     </Scene>
+                    
                 </Scene>
+
+               
+
                 <Scene
                     key="cameraScene"
                     title="Camera"
                     component={CameraScene}
-                    //direction="vertical"
-                    
+                    //direction="vertical"   
                 />
 
             </Scene>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Text, View, ImageBackground, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
 import { Actions } from 'react-native-router-flux';
+import { Header } from "react-native-elements";
 import { connect } from 'react-redux';
-import FBSDK, { LoginManager } from 'react-native-fbsdk';
 import { emailAltered, passwordAltered, loginUser, facebookLogin } from '../../actions/AuthAction';
 import { RkButton } from "react-native-ui-kitten";
 import { Card, CardSection, Input, SpinnerLoader, Button } from "../reusable";
@@ -72,13 +72,14 @@ class Login extends Component {
         return(
         <ImageBackground
 
-            source={{ uri: 'https://cdn.pixabay.com/photo/2016/11/19/12/43/barbell-1839086_960_720.jpg'}} 
+            source={require('../../assets/images/man.jpg')} 
             style={ backgroundImg }>
             <ScrollView>
+                
+                
                 <View style={ content }>
                     
-                    <Text style={ logo }> My Trainer </Text>          
-                    
+                    <Text style={ logo }> My Trainer </Text>
                     
                         <View style={ inputContainer }>
                             
@@ -147,7 +148,7 @@ const styles = StyleSheet.create({
     },
     logo: {
         color: 'white',
-        fontSize: 32,
+        fontSize: 45,
         fontWeight: 'bold',
         fontStyle: 'italic',
         textShadowColor: '#F8F8FF',
@@ -158,7 +159,7 @@ const styles = StyleSheet.create({
     inputContainer: {
         margin: 25,
         marginBottom: 0,
-        padding: 10,
+        padding: 5,
         paddingBottom: 10,
         alignSelf: 'stretch',
         borderWidth: 1,
@@ -169,7 +170,7 @@ const styles = StyleSheet.create({
         margin: 10,
         padding: 5,
         borderWidth: 1,
-        backgroundColor: 'rgba(255,255,255,0.6)'
+        backgroundColor: 'black'//'rgba(255,255,255,0.6)'
     },
     spinnerStyle: {
         flex: 1,

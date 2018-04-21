@@ -1,8 +1,8 @@
 import { 
     EX_INPUT_CHANGED, 
-    ADD_EXERCISE,
     ADD_EXERCISE_SUCCESS,
-    ADD_EXERCISE_FAIL
+    ADD_EXERCISE_FAIL,
+    FETCH_EXERCISE_SUCCESS
 } from "../actions/types";
 import firebase from 'firebase';
 //navigation module
@@ -17,33 +17,55 @@ export const createExercise_Changed = ({ prop, value }) => {
 };
 
 //Asynchronous function for adding exercise
-export const addExercise = ({ exercise_name, numSets, numReps }) => {
-    //Extracting current user object from authentication property.
-    const { currentUser } = firebase.auth(); 
-    const db = firebase.database(); //database object, which will be used to write to the database. 
+export const addExercise = ({ exercise_name, weight, number_of_sets, number_of_reps }) => {
+    
+    const { currentUser } = firebase.auth(); //Extracting current user object from authentication property.
+    const db = firebase.database();  //database object, which will be used to write to the database.
 
+    //Using syntax from redux thunk just to bypass the requirement of redux-thunk 
+    //expecting a retrun of plan object. 
+    //here I am returning a federal function. 
     return(dispatch) => {
-        db.ref(`/user/${currentUser.uid}/exercises`)
-        .set({ 
-            exerciseName: exercise_name, 
-            numberOfSets: numSets, 
-            numberOfReps: numReps 
-        })
-        .then(() => {
-            dispatch({ type: ADD_EXERCISE_SUCCESS })
-                
-        }).catch((error) => {
-            dispatch({ type: ADD_EXERCISE_FAIL})
-            alert(error);
+        //Here the dispatch returns the action which has been invoked.
+        dispatch({type: ADD_EXERCISE_SUCCESS});
+        /**
+         * Here I am using the string interpulation to specify the json path,
+         * which is where the new data will be stored. 
+         * Then the objects are pushed to that path of the database,
+         * followed by some error handling if it fails. 
+        **/
+        db.ref(`/users/${currentUser.uid}/exercises`)
+        .push({ exercise_name, weight, number_of_sets, number_of_reps })
+        //Navigate to exercise list component.
+        .then(() => Actions.workoutList())
+        .catch((error) => {
+            addingExerciseFailed(dispatch)
+            console.error(error);
         })
     };
 };
 
-
-const addingExerciseFailed = () => {
+const addingExerciseFailed = (dispatch) => {
     return { type: ADD_EXERCISE_FAIL };
 };
 
-const addingExerciseSuccess = () => {
-    return { type: ADD_EXERCISE_SUCCESS };
-}
+//Asychronous method because here I am making an request 
+//-to the database to read the data.
+//so redux-thunk funtionality is used here. 
+export const fetchExercises = () => {
+    const db = firebase.database();
+    const { currentUser } = firebase.auth(); //the current user that is currently authenticated in the app.
+    return (dispatch) => {
+        //Here anytime any data comes across from the reference
+        //call the faderal function with the object (snapshot) that 
+        //-describes the data. 
+        //the '.on' is a persistant promise is a firebase query that listens for changes 
+        //to the data and reads it.
+        db.ref(`/users/${currentUser.uid}/exercises`)
+            .on('value', snapshot => {
+                //returns an object everytime new value is found in the database.
+               dispatch({ type: FETCH_EXERCISE_SUCCESS, payload: snapshot.val() }); 
+            });
+    };
+};
+

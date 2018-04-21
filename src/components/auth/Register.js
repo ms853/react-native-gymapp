@@ -54,7 +54,7 @@ class Register extends Component{
         .then(() => {
             const { currentUser } = firebase.auth();
             if(auth) {
-                db.ref(`/users/${currentUser.uid}`).set({
+                db.ref(`/users/${currentUser.uid}/user_info`).set({
                     email: email, firstName: firstName, surName: surName, phone: phone, 
                     gender: gender, personalTrainer: pTChecked,
                     role: role
@@ -70,14 +70,15 @@ class Register extends Component{
     }
     
     _isPTChecked(){
+        
         const { pTChecked, role } = this.state;
 
-                this.setState({
-                    pTChecked: !pTChecked,
-                    role: 'Personal Trainer'
-                });
-
-                alert("You are a: " + this.state.role);
+        this.setState({
+            pTChecked: !pTChecked,
+            role: 'Personal Trainer'
+        });
+        console.log(role);
+        alert("You are a: " +  role);
   
     };
     
@@ -86,6 +87,7 @@ class Register extends Component{
         return (
             <View>
                 <ScrollView>
+                    
                 <Header
    
                     centerComponent={{ text: 'Create A New Account', 
