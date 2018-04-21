@@ -54,7 +54,9 @@ const RouterNav = () => {
                     </Scene>
                    
                     {/*Component for workout list*/}
-                    <Scene key="workoutList" title="My Workout List" component={WorkoutList}/>
+                    <Scene key="workoutList" title="List of Workout" icon={tabIcon}> 
+                        <Scene key="workoutList" title="My Workout List" component={WorkoutList}/>
+                    </Scene>
 
                     <Scene key="profilePage" title="My Profile" icon={tabIcon} >
                             <Scene 
