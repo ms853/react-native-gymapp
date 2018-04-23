@@ -4,7 +4,8 @@
 import { 
     EX_INPUT_CHANGED, 
     ADD_EXERCISE_SUCCESS, 
-    ADD_EXERCISE_FAIL 
+    ADD_EXERCISE_FAIL,
+    UPDATE_EXERCISE_SUCCESS 
 } from '../actions/types';
 
 //Declaring the initial states object
@@ -22,9 +23,11 @@ export default (state = initialStates, action) => {
             return {...state, [action.payload.prop]: action.payload.value }
         case ADD_EXERCISE_SUCCESS: 
             alert("Your new exercise has been added.");
-            return initialStates 
+            return initialStates;
         case ADD_EXERCISE_FAIL:
             return { ...state, initialStates, error: 'Failed to add exercise!' }
+        case UPDATE_EXERCISE_SUCCESS:
+            return initialStates;
         default:
             return initialStates;
     }

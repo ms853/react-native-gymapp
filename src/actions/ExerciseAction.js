@@ -2,14 +2,16 @@ import {
     EX_INPUT_CHANGED, 
     ADD_EXERCISE_SUCCESS,
     ADD_EXERCISE_FAIL,
-    FETCH_EXERCISE_SUCCESS
+    FETCH_EXERCISE_SUCCESS,
+    UPDATE_EXERCISE_SUCCESS,
+    DELETE_EXERCISE
 } from "../actions/types";
 import firebase from 'firebase';
 //navigation module
 import { Actions } from 'react-native-router-flux';
 
 //Action method for keeping track of the change in the input value. 
-export const createExercise_Changed = ({ prop, value }) => {
+export const exerciseChanged = ({ prop, value }) => {
     return { 
         type: EX_INPUT_CHANGED, 
         payload: { prop, value }
@@ -68,4 +70,43 @@ export const fetchExercises = () => {
             });
     };
 };
+
+//This is the Asychronous action method for updating exercise informaton
+//This action creator when called will update the infromation of a specific exercise.
+export const updateExercise = ({ exercise_name, weight, number_of_sets, number_of_reps, uid}) => {
+    const { currentUser } = firebase.auth();
+    const database = firebase.database();
+
+    return(dispatch) => {
+        //this reference points to the unique id assigned to the specific exercise in my database.
+        database.ref(`/users/${currentUser.uid}/exercises/${uid}`)
+        .set({
+            exercise_name: exercise_name,
+            weight: weight,
+            number_of_sets: number_of_sets,
+            number_of_reps: number_of_reps
+        }).then(() => {
+            dispatch({ type: UPDATE_EXERCISE_SUCCESS })
+            Actions.workoutList();
+        }).catch((error) => console.error(error));
+    };
+
+};
+
+export const deleteExercise = ({ exercise_name, weight, number_of_sets, number_of_reps, uid }) => {
+    const { currentUser } = firebase.auth();
+    const db = firebase.database();
+
+    return(dispatch) => {
+        db.ref(`/users/${currentUser.uid}/exercises/${uid}`)
+        .remove()
+        .then(() => {
+            dispatch({ type: DELETE_EXERCISE});
+            Actions.workoutList();
+        }).catch((error) => console.error(error));
+    };
+    
+
+};
+
 
