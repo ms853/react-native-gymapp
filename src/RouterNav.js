@@ -16,10 +16,11 @@ import Profile from "./components/main/Profile";
 import CameraScene from "./components/main/CameraScene";
 import CreateWorkoutForm from "./components/main/CreateWorkoutForm";
 import WorkoutList from "./components/main/WorkoutList";
+import EditExercise from './components/main/EditExercise';
 
 
-const tabIcon = ({ iconName }) => {
-    return <Icon name="rocket" size={30} color="#900" />;
+const tabIcon = ({ iconName, selected }) => {
+    return <Icon name="user" size={30} color="#900" />;
 }
 
 const RouterNav = () => {
@@ -34,40 +35,42 @@ const RouterNav = () => {
                     <Scene key="forgotPass" component={forgotPass} />
                     <Scene key="passReset" component={passReset} />
                 </Scene>
+
                 
-                 {/* Tab Container */}
-                <Scene key="main"
-                    tabs={true}
-                    tabBarStyle={{ backgroundColor: '#FFFFFF' }}
-                    tabBarPosition="bottom"
-                > 
-                    <Scene key="homePage" title="Home Page" icon={tabIcon}> 
-                        <Scene  
-                            key="home" 
-                            component={Home} 
-                            title="Home"
-                        />
-                    </Scene>
-                    
-                    <Scene key="CreateWorkout" title="Create Workout" icon={tabIcon}> 
-                        <Scene key="createExercise" component={CreateWorkoutForm} title="Create Your Workout" />
-                    </Scene>
-                   
-                    {/*Component for workout list*/}
-                    <Scene key="workoutList" title="List of Workout" icon={tabIcon}> 
-                        <Scene key="workoutList" title="My Workout List" component={WorkoutList}/>
-                    </Scene>
-
-                    <Scene key="profilePage" title="My Profile" icon={tabIcon} >
-                            <Scene 
-                                key="profile" 
-                                component={Profile} 
-                                title="My Profile" 
+                    {/* Tab Container */}
+                    <Scene key="main"
+                        tabs={true}
+                        tabBarStyle={{ backgroundColor: '#FFFFFF' }}
+                        tabBarPosition="bottom"
+                    > 
+                        <Scene key="homePage" title="Home Page" icon={tabIcon}> 
+                            <Scene           
+                                key="home"
+                                onRight={() => Actions.workout()}
+                                rightTitle=" Create Your Workout" 
+                                component={Home} 
+                                title="Home"
                             />
-                    </Scene>
+                        </Scene>
+                        
+                        <Scene key="profilePage" title="My Profile" icon={tabIcon} >
+                                <Scene 
+                                    key="profile" 
+                                    component={Profile} 
+                                    title="My Profile" 
+                                />
+                        </Scene>
                     
-                </Scene>
+                    </Scene>
 
+                    <Scene key="workout" >
+                        <Scene key="createExercise" component={CreateWorkoutForm} title="Create Your Workout" />
+                    
+                        {/*Component for workout list*/} 
+                        <Scene key="workoutList"  component={WorkoutList} title="My Workout List"/>
+                            
+                        <Scene key="editExercise" component={EditExercise} title="Edit Exercise"/> 
+                    </Scene>
                
 
                 <Scene
@@ -76,8 +79,10 @@ const RouterNav = () => {
                     component={CameraScene}
                     //direction="vertical"   
                 />
-
+            
+            
             </Scene>
+        
         </Router>
     );
 }
