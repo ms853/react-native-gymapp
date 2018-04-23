@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, ScrollView, Picker, TouchableOpacity } from "react-native";
+import { View, Text, ScrollView, Picker, TouchableOpacity, Alert} from "react-native";
 import firebase from 'firebase';
 import { Actions } from "react-native-router-flux";
 import { Header, CheckBox } from "react-native-elements";
@@ -78,7 +78,12 @@ class Register extends Component{
             role: 'Personal Trainer'
         });
         console.log(role);
-        alert("You are a: " +  role);
+        Alert.alert("You are a: " +  role);
+        
+        if(pTChecked == true) {
+            this.setState({ role: 'Personal Trainer'});
+            console.log('Your role is _',role)
+        }
   
     };
     

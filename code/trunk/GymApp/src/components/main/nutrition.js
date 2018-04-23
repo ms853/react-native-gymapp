@@ -3,7 +3,7 @@ import { Text, View, ImageBackground, Image, StyleSheet, TouchableOpacity, Scrol
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { RkButton } from "react-native-ui-kitten";
-import { Card, CardSection, Input, SpinnerLoader, Button } from "./reusable";
+import { Card, CardSection, Input, SpinnerLoader, Button } from "../reusable";
 
 class Nutrition extends Component {
     

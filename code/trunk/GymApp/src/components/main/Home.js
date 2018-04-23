@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View, ImageBackground, ScrollView, Image } from 'react-native';
 import { connect } from 'react-redux';
 import firebase from 'firebase';
+import { Actions } from 'react-native-router-flux';
 import { Card } from "react-native-elements";
 import { Button } from '../reusable';
 
@@ -15,12 +16,15 @@ class Home extends Component{
             username: ''
         }
     }
+    
 
     //This class will be responsible for rendering the appropriate view based on the user role. 
     componentWillMount() {
         var auth = firebase.auth();  //auth variable
         const db = firebase.database(); //database object
          
+        this._loginState() //login session method call.
+
             if(auth) { //If user is signed in, retrieve their first name! 
                 const { currentUser } = firebase.auth(); //get current authenticated user.
 
@@ -30,7 +34,7 @@ class Home extends Component{
                     this.setState({
                         username: firstName
                     });
-                    console.log('LOOK ->', this.state.username);
+                    //console.log('LOOK ->', this.state.username);
                 });
                
             }else{
@@ -38,6 +42,14 @@ class Home extends Component{
             }
     }
 
+    _loginState() {
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+              console.log('user is logged out!');
+            }
+      });
+    }
+   
 
     render(){
         //ES6 Destructuring of style objects. 
@@ -57,14 +69,20 @@ class Home extends Component{
                             image={require('../../assets/images/groceries.jpg')}
                         >
                             <Text>Nutrition Guide</Text>
-                            <Button>View Now</Button>
+                            <Button onPress={() => Actions.nutrition()}>
+                                View Now
+                            </Button>
                         </Card> 
                         <Card
                          title="View Workout Tutorials"
                          image={require('../../assets/images/training.jpg')}
                         >
                             <Text>Something</Text>
-                            <Button>View Now</Button>
+                            <Button
+                            onPress={() => Actions.tutorials()}
+                            >
+                            View Now
+                            </Button>
                         </Card>
 
                     </View>

@@ -5,6 +5,7 @@
  * -which are the states such as the user input which will be updated.
  * Switch case to determine which initial state will be updated based on the action type. 
  */
+import { Alert } from 'react-native';
 import { 
     EMAIL_INPUT_CHANGED, 
     PASSWORD_INPUT_CHANGED,
@@ -12,7 +13,11 @@ import {
     LOGIN_USER_FAIL,
     USER_LOGIN_SUCCESS,
     USER_LOGOUT,
-    FACEBOOK_LOGIN
+    FACEBOOK_LOGIN,
+    INVALID_EMAIL,
+    VALID_EMAIL,
+    VALID_PASSWORD,
+    INVALID_PASSWORD
  } from "../actions/types";
  
 
@@ -21,8 +26,14 @@ const initialState = {
     password: '',
     user: null,
     loading: false, //boolean for spinner
-    error: ''
+    error: '',
+    validate: true
 };
+
+//validation methods
+// const validateEmail = (state) => {
+//     if(state.email)
+// }
 
 export default (state = initialState, action) => {
     console.log(action);
@@ -40,15 +51,27 @@ export default (state = initialState, action) => {
         
         case USER_LOGIN_SUCCESS: 
             return { ...state, ...initialState, user: action.payload };
+
+        case VALID_EMAIL: 
+            return { ...state, error: '', validate: false};
+
+        case INVALID_EMAIL: 
+            return {...state, error: "Please, the email you have provided is invalid. Check your email address must be valid.", validate: true};
+
+        case VALID_PASSWORD: 
+            return { ...state, error: ''};
+
+        case INVALID_PASSWORD: 
+            return {...state, error: "Please, the password you have provided is invalid. Check your password."};
         
         case LOGIN_USER_FAIL:
-            alert('Invalid Email or Password!');
-            return { ...state, email: '', password: '', error: 'Invalid Input! Check your email or password.', 
+            Alert.alert('Invalid Email or Password!');
+            return { ...state, email: '', password: '', error: 'The email or password you have entered is invalid. Please try again.', 
             loading: false,
         };
         
         case USER_LOGOUT: 
-            alert('You have logged out!');
+            Alert.alert('You have logged out!');
             return { ...state, user: action.payload };
         
         case FACEBOOK_LOGIN:

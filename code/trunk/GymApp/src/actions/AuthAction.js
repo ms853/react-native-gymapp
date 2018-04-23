@@ -1,8 +1,9 @@
 import firebase from 'firebase';
+import { Alert } from 'react-native';
 import { AccessToken, LoginManager } from 'react-native-fbsdk';
 import { DataSnapshot } from '@firebase/database';
 import { Actions } from 'react-native-router-flux';
-import { validator } from '../components/validator';
+
 import { 
     EMAIL_INPUT_CHANGED, 
     PASSWORD_INPUT_CHANGED,
@@ -10,22 +11,60 @@ import {
     LOGIN_USER_FAIL,
     USER_LOGIN_SUCCESS,
     USER_LOGOUT, 
-    FACEBOOK_LOGIN
+    FACEBOOK_LOGIN,
+    INVALID_EMAIL,
+    VALID_EMAIL,
+    VALID_PASSWORD,
+    INVALID_PASSWORD
 } from "./types";
 
 // -------- Here I have Action Creators which are responsible for handelling the user login -----
 
-//Action creators for handelling authentication (login)
+
+
+//Functions for validating user credentials
+export const email_validator = (text) => {
+    emailValid = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+
+    //Using middleware redux-thunk to satisfy the requirement of redux action creators.
+    return(dispatch) => {
+
+            if(emailValid.test(text)){
+                dispatch({ type: VALID_EMAIL });
+                console.log('Correct user input');
+            }else{
+                dispatch({ type: INVALID_EMAIL });
+                
+            }
+    };
+}
+
+export const password_validator = (text) => {
+    passCheck = /(?=.{8,})/ //Password string must be at least 8 characters long or longer
+
+    //Using middleware redux-thunk to satisfy the requirement of redux action creators.
+    return(dispatch) => {
+
+            if(passCheck.test(text)){
+                dispatch({ type: VALID_PASSWORD });
+                console.log('Correct user input');
+            }else{
+                dispatch({ type: INVALID_PASSWORD });
+                
+            }
+    };
+}
+
+
 //These two functions are responsible for updating the email and password
 //of the user.
-
-
 export const emailAltered = (text) => {
     
-    return {
-        type: EMAIL_INPUT_CHANGED,
-        payload: text
+    return  {
+            type: EMAIL_INPUT_CHANGED,
+            payload: text
     };
+    
 };
 
 export const passwordAltered = (text) => {

@@ -17,6 +17,8 @@ import CameraScene from "./components/main/CameraScene";
 import CreateWorkoutForm from "./components/main/CreateWorkoutForm";
 import WorkoutList from "./components/main/WorkoutList";
 import EditExercise from './components/main/EditExercise';
+import WorkoutTutorials from './components/main/WorkoutTutorials';
+import Nutrition from "./components/main/Nutrition";
 
 
 const tabIcon = ({ iconName, selected }) => {
@@ -70,15 +72,36 @@ const RouterNav = () => {
                         <Scene key="workoutList"  component={WorkoutList} title="My Workout List"/>
                             
                         <Scene key="editExercise" component={EditExercise} title="Edit Exercise"/> 
+                        
                     </Scene>
                
+                <Scene key="camera">
+                    <Scene
+                        key="cameraScene"
+                        title="Camera"
+                        component={CameraScene}
+                        //direction="vertical"   
+                    />
+                </Scene>
 
-                <Scene
-                    key="cameraScene"
-                    title="Camera"
-                    component={CameraScene}
-                    //direction="vertical"   
-                />
+                <Scene key="nutrition">
+                    <Scene
+                        key="viewNutrition"
+                        title="Information on Nutrition"
+                        component={Nutrition}
+                           
+                    />
+                </Scene>
+
+                
+                <Scene key="tutorials">
+                    <Scene
+                        key="viewTutorials"
+                        title="Watch Workout Tutorials"
+                        component={WorkoutTutorials}
+                          
+                    />
+                </Scene>
             
             
             </Scene>

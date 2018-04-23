@@ -1,8 +1,9 @@
 //import actions for the workout 
 //handle updates to state objects based on the action invoked.
-
+import { Alert } from 'react-native';
 import { 
-    EX_INPUT_CHANGED, 
+    EX_INPUT_CHANGED,
+    ADD_EXERCISE, 
     ADD_EXERCISE_SUCCESS, 
     ADD_EXERCISE_FAIL,
     UPDATE_EXERCISE_SUCCESS 
@@ -17,15 +18,16 @@ const initialStates = {
     error: ''
 };
 
+
 export default (state = initialStates, action) => {
     switch(action.type) {
         case EX_INPUT_CHANGED:
-            return {...state, [action.payload.prop]: action.payload.value }
+            return {...state, [action.payload.prop]: action.payload.value };
         case ADD_EXERCISE_SUCCESS: 
-            alert("Your new exercise has been added.");
+            Alert.alert("Your new exercise has been added.");
             return initialStates;
         case ADD_EXERCISE_FAIL:
-            return { ...state, initialStates, error: 'Failed to add exercise!' }
+            return { ...state, initialStates, error: 'Failed to add exercise!' };
         case UPDATE_EXERCISE_SUCCESS:
             return initialStates;
         default:

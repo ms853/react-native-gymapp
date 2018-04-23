@@ -23,13 +23,13 @@ export const addExercise = ({ exercise_name, weight, number_of_sets, number_of_r
     
     const { currentUser } = firebase.auth(); //Extracting current user object from authentication property.
     const db = firebase.database();  //database object, which will be used to write to the database.
-
+    
     //Using syntax from redux thunk just to bypass the requirement of redux-thunk 
     //expecting a retrun of plan object. 
     //here I am returning a federal function. 
     return(dispatch) => {
-        //Here the dispatch returns the action which has been invoked.
-        dispatch({type: ADD_EXERCISE_SUCCESS});
+        //Here the dispatch returns the action which has been invoked. 
+        dispatch({ type: ADD_EXERCISE_SUCCESS })
         /**
          * Here I am using the string interpulation to specify the json path,
          * which is where the new data will be stored. 
@@ -39,7 +39,7 @@ export const addExercise = ({ exercise_name, weight, number_of_sets, number_of_r
         db.ref(`/users/${currentUser.uid}/exercises`)
         .push({ exercise_name, weight, number_of_sets, number_of_reps })
         //Navigate to exercise list component.
-        .then(() => Actions.workoutList())
+        .then(() =>  Actions.workoutList())
         .catch((error) => {
             addingExerciseFailed(dispatch)
             console.error(error);
