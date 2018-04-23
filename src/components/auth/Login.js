@@ -3,27 +3,34 @@ import { Text, View, ImageBackground, Image, StyleSheet, TouchableOpacity, Scrol
 import { Actions } from 'react-native-router-flux';
 import { Header } from "react-native-elements";
 import { connect } from 'react-redux';
-import { emailAltered, passwordAltered, loginUser, facebookLogin } from '../../actions/AuthAction';
+import { emailAltered, passwordAltered, loginUser, facebookLogin, email_validator, password_validator } from '../../actions/AuthAction';
 import { RkButton } from "react-native-ui-kitten";
 import { Card, CardSection, Input, SpinnerLoader, Button } from "../reusable";
-
+//import validator from '../validator';
 
 class Login extends Component {
     
    
+
     //Event handlers will have action creators which will handle the user input update. 
     onEmailChanged(text) {
         this.props.emailAltered(text);
-       
+        if(text != '') {
+            this.props.email_validator(text);
+        }
     }
 
     onPasswordChanged(text) {
         //calling the action creator from  
         this.props.passwordAltered(text);
+        if(text != '') {
+            this.props.password_validator(text);
+        }
     }
 
     onButtonPress() {
         const { email, password } = this.props;
+        
         //call the action creator.
         this.props.loginUser({ email, password });
     }
@@ -40,12 +47,12 @@ class Login extends Component {
         }else{
             return(
                    
-                    <RkButton rkType='xlarge'
-                        style={styles.buttonStyle}    
-                            onPress={this.onButtonPress.bind(this)}
-                            >
-                                Login
-                     </RkButton>
+                 <RkButton rkType='xlarge'
+                    style={styles.buttonStyle}    
+                    onPress={this.onButtonPress.bind(this)}
+                >
+                    Login
+                </RkButton>
             );
         }
     }
@@ -55,7 +62,7 @@ class Login extends Component {
         this.props.facebookLogin();
     }
 
-     
+    //Render method for displaying the User Interface.
     render() {
         
         //ES6 Destructuring     
@@ -66,9 +73,11 @@ class Login extends Component {
             logo, 
             inputContainer,
             linkStyle,
-            errorTextStyle
+            errorTextStyle,
             } = styles;
         //require('../assets/images/barbell-bodybuild.jpg')
+
+        const { error } = this.props;
         return(
         <ImageBackground
 
@@ -83,10 +92,15 @@ class Login extends Component {
                     
                         <View style={ inputContainer }>
                             
+                            <Text style={ errorTextStyle }>
+                                {error}
+                            </Text>
+
                             <CardSection>
                                 <Input 
                                 label="Email"
                                 placeholder="email@mail.com"
+                                autoCapitalize={false}
                                 onChangeText={this.onEmailChanged.bind(this)}
                                 value={this.props.email}
                                 />
@@ -102,7 +116,6 @@ class Login extends Component {
                             />
                             </CardSection>
                            
-                                <RkButton rkType="xlarge" onPress={this._loginFB.bind(this)}>Login with Facebook</RkButton>
                             
                             <CardSection>
                                 <Text>Don't have an account? </Text>    
@@ -116,13 +129,9 @@ class Login extends Component {
                                     <Text style={linkStyle}>Forgot your password?</Text>
                                 </TouchableOpacity>
                             </CardSection>
-                            <CardSection>
-                            <Text style={ errorTextStyle }>
-                                {this.props.error}
-                            </Text>
-                            </CardSection>
                                 {this.buttonRender()} 
-                                  
+
+                              <RkButton rkType="xlarge" onPress={this._loginFB.bind(this)}>Login with Facebook</RkButton>     
                         </View>
                    
                 </View>        
@@ -166,6 +175,7 @@ const styles = StyleSheet.create({
         borderColor: '#fff',
         backgroundColor: 'rgba(255,255,255,0.2)',
     },
+   
     buttonStyle: {
         margin: 10,
         padding: 5,
@@ -190,20 +200,24 @@ const styles = StyleSheet.create({
     errorTextStyle: {
         fontSize: 17,
         alignSelf: 'center',
-        color: 'red'
-    }
+        color: 'red',
+        backgroundColor: 'rgba(255,255,255,0.2)',
+
+    },
+
 });
 
 //Map state to props function 
 //the property (i.e. email) comes from the reducer
 const mapStateToProps = ({ auth }) => {
-    const { email, password, loading, error } = auth;
+    const { email, password, loading, error, validate } = auth;
     
     return {
         email,
         password,
         loading, 
-        error
+        error,
+        validate
     };
 };
 
@@ -211,5 +225,7 @@ export default connect(mapStateToProps, {
     emailAltered, 
     passwordAltered,
     loginUser,
-    facebookLogin 
+    facebookLogin,
+    email_validator,
+    password_validator
 })(Login);

@@ -8,6 +8,7 @@ import { addExercise} from '../../actions/ExerciseAction';
 import { Card, CardSection, Input, Button, NumberInput } from "../reusable";
 import WorkoutForm from './WorkoutForm';
 
+
 class CreateWorkoutForm extends Component{
 
     _addExercise() {
@@ -22,6 +23,8 @@ class CreateWorkoutForm extends Component{
             
     }
     
+    
+
     render(){
     
         return(
