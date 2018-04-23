@@ -1,3 +1,6 @@
+//This reducer is responsible for handling the action type which
+//retrieves the exercise data from firebase database.
+//It is also responsible for displaying the change to the data. 
 import { FETCH_EXERCISE_SUCCESS } from "../actions/types";
 
 //Empty initial state object whose values wil

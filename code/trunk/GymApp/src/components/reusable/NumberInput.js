@@ -31,7 +31,7 @@ const styles = {
     
     containerStyle: {
         
-        height: 80,
+        height: 60,
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center'
@@ -39,13 +39,10 @@ const styles = {
     },
     
     labelStyle: {
-        fontSize: 16,
+        fontSize: 17,
         flex: 1
     },
 
-    imageStyle: {
-
-    }
 };
   
 

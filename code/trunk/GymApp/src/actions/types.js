@@ -15,3 +15,5 @@ export const EX_INPUT_CHANGED = "create_exercise_input_changed";
 export const ADD_EXERCISE_SUCCESS = "exercise_added_successfully";
 export const ADD_EXERCISE_FAIL = "adding_exercise_failed";
 export const FETCH_EXERCISE_SUCCESS = "exercises_successfully_fetched";
+export const UPDATE_EXERCISE_SUCCESS= "exercise_information_updated";
+export const DELETE_EXERCISE = "exercise_deleted";
