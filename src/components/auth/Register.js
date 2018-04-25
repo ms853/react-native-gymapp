@@ -1,100 +1,92 @@
 import React, { Component } from "react";
 import { View, Text, ScrollView, Picker, TouchableOpacity, Alert} from "react-native";
 import firebase from 'firebase';
+import { connect } from 'react-redux';
+import { 
+    regEmailChanged, 
+    regPasswordChanged, 
+    registerUpdate,
+    email_validator, 
+    password_validator,
+    register_new_user
+} from '../../actions/AuthAction';
 import { Actions } from "react-native-router-flux";
 import { Header, CheckBox } from "react-native-elements";
-import { Card, CardSection, Input, Button, SpinnerLoader } from '../reusable';
+import { RkButton } from 'react-native-ui-kitten';
+import { Card, CardSection, Input, SpinnerLoader } from '../reusable';
+import PhoneInput from 'react-native-phone-input';
 
 class Register extends Component{
     
-    constructor(props){
-        super(props);
+    //Two helper methods for tracking the changes to email and password in form. 
+    updateEmail(text) {
+        this.props.regEmailChanged(text);
+        if(text != ''){
+            this.props.email_validator(text);
+        }
+    }
 
-        this.state = {
-            firstName: '',
-            surName: '',
-            phone: '',
-            role: 'Gym User' || 'Personal Trainer',
-            email: '',
-            password: '',
-            pTChecked: false,
-            gender: 'male' || 'female',
-            error: '',
-            loading: false,
-            
-            
-        };
+    updatePassword(text) {
+        this.props.regPasswordChanged(text);
+        if(text != ''){
+            this.props.password_validator(text);
+        }
+    }
 
-    };
-    
-    //Method responsible for creating the users account. 
-    onRegButtonPress(){
-
-        //Destructuring all the necessary objects from the state object.     
+    onRegButtonPress() {
+        //Extracting objects from the props passed 
+        //down from the reducer to the component. 
         const { 
-            email, 
-            password, 
-            role, 
-            phone, 
-            gender,
-            pTChecked, 
-            surName, 
-            firstName 
-        } = this.state;
+            email, password, 
+            firstName, surName, 
+            gender, phoneNumber, role 
+        } = this.props;
 
-        //create the firebase object
-        const auth = firebase.auth();
-        const db = firebase.database();
-       
-        //Here create the new user. 
-        auth.createUserWithEmailAndPassword(email, password)
-        .then(() => console.log("Successfully created new account for " + auth))
-        .catch((error) => alert(error))
-        //Here a check is done to see if the user is authenticated!
-        .then(() => {
-            const { currentUser } = firebase.auth();
-            if(auth) {
-                db.ref(`/users/${currentUser.uid}/user_info`).set({
-                    email: email, firstName: firstName, surName: surName, phone: phone, 
-                    gender: gender, personalTrainer: pTChecked,
-                    role: role
-               })
-            } else {
-                alert("User is not authenticated, user information cannot be saved!");
-            }
-        })
-        //Save user details!
-        .then(() => Actions.main())
-        .catch((error) => alert(error));
         
+        console.log("Your Phone->", phoneNumber)
+        //call made to the action creator to register the new user.
+        this.props.register_new_user({firstName, surName, email, password, phoneNumber, gender, role});
+
     }
     
-    _isPTChecked(){
-        
-        const { pTChecked, role } = this.state;
-
-        this.setState({
-            pTChecked: !pTChecked,
-            role: 'Personal Trainer'
-        });
-        console.log(role);
-        Alert.alert("You are a: " +  role);
-        
-        if(pTChecked == true) {
-            this.setState({ role: 'Personal Trainer'});
-            console.log('Your role is _',role)
+    //Conditional render method for button 
+    renderButton() {
+        if(this.props.loading) {
+            return <SpinnerLoader 
+            size={40} 
+            style = {styles.spinnerStyle}
+            type={'Circle'}
+            color={'white'}
+            />;
+            
+        }else{
+            return(   
+                <RkButton rkType="xlarge" style={styles.buttonStyle} 
+                onPress={this.onRegButtonPress.bind(this)}>
+                 Register 
+                </RkButton>
+            );
         }
-  
-    };
+    }
     
-
+    
     render() {
+        //ES6 Destructuring of prop objects for form values
+        const { 
+            error, 
+            email, password, 
+            firstName, surName, 
+            gender, role,
+            phoneNumber
+        } = this.props;
+
+        const { errorTextStyle } = styles;
+
+        //Returns JSX code which is the UI
         return (
-            <View>
-                <ScrollView>
+            <ScrollView>
                     
                 <Header
-   
                     centerComponent={{ text: 'Create A New Account', 
                     style: { color: '#fff', 
                             fontSize: 20,
@@ -106,10 +98,33 @@ class Register extends Component{
                 <Card>
                     <CardSection>
                         <Input 
-                            label="Firstname"
-                            placeholder ="Enter Firstname"
-                            value={this.state.firstName}
-                            onChangeText={firstName => this.setState({ firstName })}
+                            label="Email Address"
+                            placeholder ="email@mail.com"
+                            value={email}
+                            onChangeText={this.updateEmail.bind(this)}
+                        />
+                    </CardSection>
+
+                    <CardSection>
+                        <Input 
+                            label="Enter Password"
+                            placeholder = "password"
+                            secureTextEntry
+                            value={password}
+                            onChangeText={this.updatePassword.bind(this)}
+                        />
+                    </CardSection>
+                    
+                    <Text style={ errorTextStyle }>
+                        {error}
+                    </Text>
+                    
+                    <CardSection>
+                        <Input 
+                            label="First Name"
+                            placeholder ="Enter First Name"
+                            onChangeText={value => this.props.registerUpdate({ prop: "firstName", value})}
+                            value={firstName}
                         />
                     </CardSection>
 
@@ -117,8 +132,8 @@ class Register extends Component{
                         <Input 
                             label="Surname"
                             placeholder ="Enter Surname"
-                            value={this.state.surName}
-                            onChangeText={surName => this.setState({ surName })}
+                            onChangeText={value => this.props.registerUpdate({ prop: "surName", value})}
+                            value={surName}
                         />
                     </CardSection>
                     
@@ -128,9 +143,9 @@ class Register extends Component{
 
                     <CardSection>
                     <Picker
-                        style={{ flex: 1, margin: 10 }}
-                        selectedValue={this.state.gender}
-                        onValueChange={gender => this.setState({ gender })}
+                        style={{ flex: 1, margin: 2 }}
+                        selectedValue={gender}
+                        onValueChange={value => this.props.registerUpdate({ prop: "gender", value})}
                     >
                         <Picker.Item label="Male" value="male" />
                         <Picker.Item label="Female" value="female" />
@@ -138,62 +153,104 @@ class Register extends Component{
                     </CardSection>
                     
                     <CardSection>
-                        <Input 
-                            label="Enter Phone Number"
-                            placeholder="(+44) 7..."
-                            value={this.state.phone}
-                            onChangeText={phone => this.setState({ phone })}
-                        />
+                        <Text style={styles.textStyle}>Enter Your Phone Number</Text>
                     </CardSection>
 
-                    <CardSection>
-                        <Input 
-                            label="Email Address"
-                            placeholder ="email@mail.com"
-                            value={this.state.email}
-                            onChangeText={email => this.setState({ email })}
-                        />
-                    </CardSection>
-
-                    <CardSection>
-                        <Input 
-                            label="Enter Password"
-                            placeholder = "password"
-                            secureTextEntry
-                            value={this.state.password}
-                            onChangeText={password => this.setState({ password })}
-                        />
-                    </CardSection>
-
+                    <View style={styles.phoneContainerStyle}>
+                        <PhoneInput ref={ref => {
+                         this.phone = ref;}}  
+                         onChangePhoneNumber={value => this.props.registerUpdate({ prop: "phoneNumber", value})}
+                         value={phoneNumber}
+                         />
+                        
+                    </View>
+                    
                     <CardSection> 
-                        <Text style={styles.textStyle}>If you are a Personal Trainer, please tick the box.</Text>
+                        <Text style={styles.textStyle}>
+                        If you are a Personal Trainer, please choose the Personal Trainer role
+                        from the choice box below.
+                        </Text>
+                    </CardSection>
+
+                    <CardSection>
+                    <Picker
+                        style={{ flex: 1, margin: 2 }}
+                        selectedValue={role}
+                        onValueChange={value => this.props.registerUpdate({ prop: "role", value})}
+                    >
+                        <Picker.Item label="Gym User" value="Gym User" />
+                        <Picker.Item label="Personal Trainer" value="Personal Trainer" />
+                    </Picker>    
                     </CardSection>     
-                    <CardSection>
-                        <CheckBox 
-                            title="Personal Trainer"
-                            checked={this.state.pTChecked}
-                            onIconPress={() => this._isPTChecked()}
-                        /> 
-
-                    </CardSection>
-
-                    <CardSection>
-                        <Button onPress={this.onRegButtonPress.bind(this)}> Register </Button>
-                    </CardSection>
+                        {/*calling render button function here.*/}        
+                        {this.renderButton()}
                 </Card>
                 
-                </ScrollView>
-            </View>    
+            </ScrollView>    
         );
     }
 }
 
 //Stylesheet object 
 const styles = {
+    
     textStyle: {
         fontSize: 15
-    }
+    },
+
+    phoneContainerStyle: {
+        flex: 1,
+        alignItems: "center",
+        padding: 20,
+        paddingTop: 20,
+        backgroundColor: 'white'
+    },
+
+    errorTextStyle: {
+        fontSize: 15,
+        color: 'red',
+        backgroundColor: 'rgba(255,255,255,1)'
+    },
+
+    buttonStyle: {
+        margin: 10,
+        padding: 5,
+        borderWidth: 1,
+        backgroundColor: 'black'//'rgba(255,255,255,0.6)'
+    },
 };
 
+const MapStateToProps = ({ register }) => {
+    const { 
+        email, 
+        password, 
+        firstName, 
+        surName,
+        gender,
+        role, 
+        error,
+        loading,
+        phoneNumber 
+    } = register;
+    
+    return {
+        email, 
+        password, 
+        firstName, 
+        surName,
+        gender,
+        role,
+        phoneNumber, 
+        error,
+        loading 
+    };
+}
 
-export default Register;
+export default connect(MapStateToProps, {
+    regEmailChanged, 
+    regPasswordChanged, 
+    registerUpdate,
+    email_validator, 
+    password_validator,
+    register_new_user    
+})(Register);

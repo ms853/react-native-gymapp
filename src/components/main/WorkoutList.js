@@ -2,6 +2,7 @@ import _ from 'lodash';
 import React, { Component } from "react";
 import { ScrollView, ListView, Text, View } from 'react-native';
 import { connect } from "react-redux";
+import { Card, CardSection } from '../reusable'
 import { fetchExercises } from "../../actions/ExerciseAction";
 import ExerciseListItem from '../ExerciseListItem';
 
@@ -48,14 +49,24 @@ class WorkoutList extends Component{
 
         return (
             <ScrollView>
+                <CardSection>
+                    <Text style={styles.textStyle}>Please select the exercise you wish to edit.</Text>
+                </CardSection>
+                
                 <ListView
                     enableEmptySections
                     dataSource={this.dataSource}  
                     renderRow={this.renderRow}    
                 />
             </ScrollView>
-
         );
+    }
+}
+
+const styles = {
+    textStyle: {
+        fontSize: 20,
+        marginBottom: 30
     }
 }
 

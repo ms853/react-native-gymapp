@@ -20,10 +20,12 @@ class Home extends Component{
 
     //This class will be responsible for rendering the appropriate view based on the user role. 
     componentWillMount() {
+        this.sessionState();
+
         var auth = firebase.auth();  //auth variable
         const db = firebase.database(); //database object
          
-        this._loginState() //login session method call.
+       // this._loginState() //login session method call.
 
             if(auth) { //If user is signed in, retrieve their first name! 
                 const { currentUser } = firebase.auth(); //get current authenticated user.
@@ -31,26 +33,28 @@ class Home extends Component{
                 db.ref(`/users/${currentUser.uid}/user_info`) //Database reference including the user id.
                 .once("value", snapshot => { //The query type used here is 'once' to listen once for data in the database. 
                     var firstName = snapshot.val().firstName; //This gets the firstName of the user signed in. 
+                    console.log("Yo ", firstName); //printing to check the value obtained from the database.
                     this.setState({
                         username: firstName
                     });
-                    //console.log('LOOK ->', this.state.username);
+                    console.log('LOOK ->', this.state.username);
                 });
                
             }else{
                 console.log("The user's name cannot be retrieved from the database, because user is not authenticated");
             }
     }
-
-    _loginState() {
+  
+    
+    sessionState() { //Check the state of the user if they are authenticated
         firebase.auth().onAuthStateChanged((user) => {
             if (user) {
-              console.log('user is logged out!');
+            console.log('user is logged out!');
             }
-      });
+    });
     }
-   
 
+   
     render(){
         //ES6 Destructuring of style objects. 
         const { containerStyle, content, welcomeTextStyle } = homeStyle;
@@ -69,15 +73,21 @@ class Home extends Component{
                             image={require('../../assets/images/groceries.jpg')}
                         >
                             <Text>Nutrition Guide</Text>
+                            
                             <Button onPress={() => Actions.nutrition()}>
                                 View Now
                             </Button>
                         </Card> 
                         <Card
-                         title="View Workout Tutorials"
+                         title="Watch Workout Tutorials"
                          image={require('../../assets/images/training.jpg')}
                         >
-                            <Text>Something</Text>
+                            <Text>
+                                Get started with workout videos that allow you to 
+                                learn useful tips and advice on how to train, how to perform an exercise,
+                                and much more.
+                            </Text>
+                            
                             <Button
                             onPress={() => Actions.tutorials()}
                             >

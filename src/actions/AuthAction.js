@@ -4,6 +4,7 @@ import { AccessToken, LoginManager } from 'react-native-fbsdk';
 import { DataSnapshot } from '@firebase/database';
 import { Actions } from 'react-native-router-flux';
 
+//Import Action Types 
 import { 
     EMAIL_INPUT_CHANGED, 
     PASSWORD_INPUT_CHANGED,
@@ -15,14 +16,19 @@ import {
     INVALID_EMAIL,
     VALID_EMAIL,
     VALID_PASSWORD,
-    INVALID_PASSWORD
+    INVALID_PASSWORD,
+    REG_UPDATE,
+    REG_EMAIL_INPUT_CHANGED,
+    REG_PASSWORD_INPUT_CHANGED,
+    REGISTER_NEW_USER,
+    REGISTER_NEW_USER_FAIL,
+    REGISTER_NEW_USER_SUCCESS,
+    VALID_NAME,
+    INVALID_NAME
 } from "./types";
 
-// -------- Here I have Action Creators which are responsible for handelling the user login -----
 
-
-
-//Functions for validating user credentials
+//Action Creator Functions for validating user credentials.
 export const email_validator = (text) => {
     emailValid = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
 
@@ -40,7 +46,7 @@ export const email_validator = (text) => {
 }
 
 export const password_validator = (text) => {
-    passCheck = /(?=.{8,})/ //Password string must be at least 8 characters long or longer
+    passCheck = /(?=.{8,})/ //Password string must be at least 8 characters long or longer.
 
     //Using middleware redux-thunk to satisfy the requirement of redux action creators.
     return(dispatch) => {
@@ -158,3 +164,106 @@ export const facebookLogin = (dispatch, user) => {
 };
 
 
+// ----- Here are action creators that will handle the registration of the user. -------
+
+//THIS FUNCTION NEEDS WORK 
+//Name for validating fields.
+export const check_name_fields = (text) => {
+    
+    return(dispatch) => {
+        if(type == VALID_NAME){
+            return dispatch({ type: VALID_EMAIL });
+        } else 
+            if( type == INVALID_NAME) {
+                return dispatch({ type: INVALID_NAME });
+        }
+    };
+}
+
+//Here are two methods responsible for updating the user input in the signup form. 
+export const registerUpdate = ({ prop, value }) => {
+    return {
+        type: REG_UPDATE,
+        //Returns a key interpulation - values determined through runtime.
+        payload: { prop, value }
+    };
+};
+
+export const regEmailChanged = (text) => {
+    
+    return {
+        type: REG_EMAIL_INPUT_CHANGED,
+        payload: text
+    };
+};
+
+export const regPasswordChanged = (text) => {
+    return {
+        type: REG_PASSWORD_INPUT_CHANGED,
+        payload: text
+    };
+};
+
+
+//Action creator for registering new user
+export const register_new_user = ({ firstName, surName, email, password, phoneNumber, gender, role}) => {  
+    const auth = firebase.auth();
+    
+    return(dispatch) => {
+        dispatch({ type: REGISTER_NEW_USER });
+
+        //create new account
+        auth.createUserWithEmailAndPassword(email, password)
+        .then((user) => signupSuccess(dispatch, user))
+        .catch((error) => {
+            signupFail(dispatch);
+            console.error(error);
+        })
+        
+        //extended promise is added here to avoid errors  
+        .then(() => {
+        if(auth) {
+            //call to save user details if the auth is not null.
+            saveNewUserDetails({ firstName, surName, email, phoneNumber, gender, role });
+            console.log("New User " + auth + " " + "details have been saved!");
+            
+            
+        } else {
+            Alert.alert("User must be authenticated before details are saved!");
+        }//Navigate to home page. 
+        }).then(() => Actions.main())
+        .catch((error) => alert(error));
+    
+
+    };
+
+}
+
+//Action creators returning action objects respectively based on the outcome 
+//of the signup. 
+const signupSuccess = (dispatch, user) => {
+    dispatch({ 
+        type: REGISTER_NEW_USER_SUCCESS, 
+        payload: user
+    });
+};
+
+const signupFail = (dispatch) => {
+    dispatch({ type: REGISTER_NEW_USER_FAIL });
+};
+
+const saveNewUserDetails = ({ firstName, surName, email, phoneNumber, gender, role}) => {
+    const { currentUser } = firebase.auth();
+    const db = firebase.database();
+
+    db.ref(`/users/${currentUser.uid}/user_info`)
+    .set({
+        firstName: firstName,
+        surName: surName,
+        email: email,
+        phoneNumber: phoneNumber,
+        gender: gender,
+        role: role
+    }).catch((error) => alert(error));
+    
+};
