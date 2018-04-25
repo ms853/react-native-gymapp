@@ -56,20 +56,20 @@ export default (state = initialState, action) => {
             return { ...state, error: '', validate: false};
 
         case INVALID_EMAIL: 
-            return {...state, error: "Please, the email you have provided is invalid. Check your email address must be valid.", validate: true};
+            return {...state, error: "Please, the email you have provided is invalid. Email address must be of the following user@mail.com or user12@mail.com.", validate: true};
 
         case VALID_PASSWORD: 
             return { ...state, error: ''};
 
         case INVALID_PASSWORD: 
-            return {...state, error: "Please, the password you have provided is invalid. Check your password."};
+            return {...state, error: "Please, the password you have provided is invalid. Password must be 8 characters or longer."};
         
         case LOGIN_USER_FAIL:
             Alert.alert('Invalid Email or Password!');
             return { ...state, email: '', password: '', error: 'The email or password you have entered is invalid. Please try again.', 
             loading: false,
         };
-        
+
         case USER_LOGOUT: 
             Alert.alert('You have logged out!');
             return { ...state, user: action.payload };
