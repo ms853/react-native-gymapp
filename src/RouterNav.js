@@ -18,7 +18,7 @@ import CreateWorkoutForm from "./components/main/CreateWorkoutForm";
 import WorkoutList from "./components/main/WorkoutList";
 import EditExercise from './components/main/EditExercise';
 import WorkoutTutorials from './components/main/WorkoutTutorials';
-import Nutrition from "./components/main/Nutrition";
+import Nutrition from "./components/main/nutrition";
 
 
 const tabIcon = ({ iconName, selected }) => {
