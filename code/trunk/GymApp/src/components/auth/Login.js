@@ -51,7 +51,7 @@ class Login extends Component {
                     style={styles.buttonStyle}    
                     onPress={this.onButtonPress.bind(this)}
                 >
-                    Login
+                    Sign In
                 </RkButton>
             );
         }
@@ -74,6 +74,7 @@ class Login extends Component {
             inputContainer,
             linkStyle,
             errorTextStyle,
+            textStyle
             } = styles;
         //require('../assets/images/barbell-bodybuild.jpg')
 
@@ -92,15 +93,10 @@ class Login extends Component {
                     
                         <View style={ inputContainer }>
                             
-                            <Text style={ errorTextStyle }>
-                                {error}
-                            </Text>
-
                             <CardSection>
                                 <Input 
                                 label="Email"
                                 placeholder="email@mail.com"
-                                autoCapitalize={false}
                                 onChangeText={this.onEmailChanged.bind(this)}
                                 value={this.props.email}
                                 />
@@ -115,23 +111,24 @@ class Login extends Component {
                             value={this.props.password}
                             />
                             </CardSection>
-                           
+                            <Text style={ errorTextStyle }>
+                                {error}
+                            </Text>
                             
-                            <CardSection>
-                                <Text>Don't have an account? </Text>    
-                                <TouchableOpacity onPress={() => Actions.register()}>
+                                <Text style={textStyle}>Don't have an account? </Text>    
+                                <TouchableOpacity  onPress={() => Actions.register()}>
                                     <Text style={linkStyle}> Create An Account </Text>
                                 </TouchableOpacity>
-                            </CardSection>
-                            <CardSection>
+                          
+                      
                                 
-                                <TouchableOpacity onPress={() => Actions.forgotPass()}>
+                                <TouchableOpacity  onPress={() => Actions.forgotPass()}>
                                     <Text style={linkStyle}>Forgot your password?</Text>
                                 </TouchableOpacity>
-                            </CardSection>
+                       
                                 {this.buttonRender()} 
 
-                              <RkButton rkType="xlarge" onPress={this._loginFB.bind(this)}>Login with Facebook</RkButton>     
+                              <RkButton rkType="xlarge" onPress={this._loginFB.bind(this)}>Connect with Facebook</RkButton>     
                         </View>
                    
                 </View>        
@@ -187,14 +184,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
+    textStyle: {
+        flexDirection: 'row',
+        fontSize: 15
+    },
     linkStyle: {
         fontSize: 15,
         fontWeight: 'bold',
         //color: 'blue',
         //backgroundColor: 'rgba(255,255,255,0.6)',
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
+        flexDirection: 'column',
+        //alignItems: 'center',
+        //justifyContent: 'center',
         //marginLeft: 55
     }, 
     errorTextStyle: {
