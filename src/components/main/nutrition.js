@@ -21,10 +21,7 @@ class Nutrition extends Component {
             } = styles;
         //require('../assets/images/barbell-bodybuild.jpg')
         return(
-        <ImageBackground
-
-            source={{ uri: 'https://cdn.pixabay.com/photo/2016/11/19/12/43/barbell-1839086_960_720.jpg'}} 
-            style={ backgroundImg }>
+        
             <ScrollView>
                 <View style={ content }>
                            
@@ -42,8 +39,6 @@ class Nutrition extends Component {
                    
                 </View>        
                 </ScrollView>
-        </ImageBackground>
-        
         );
     }
 }
