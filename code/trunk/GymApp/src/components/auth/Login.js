@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Text, View, ImageBackground, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import { Text, View, ImageBackground, 
+    Image, StyleSheet, TouchableOpacity, 
+    ScrollView, KeyboardAvoidingView } from "react-native";
 import { Actions } from 'react-native-router-flux';
 import { Header } from "react-native-elements";
 import { connect } from 'react-redux';
@@ -74,25 +76,29 @@ class Login extends Component {
             inputContainer,
             linkStyle,
             errorTextStyle,
-            textStyle
+            textStyle,
+            linkContent
             } = styles;
         //require('../assets/images/barbell-bodybuild.jpg')
 
         const { error } = this.props;
         return(
+            
         <ImageBackground
 
             source={require('../../assets/images/man.jpg')} 
             style={ backgroundImg }>
+            
             <ScrollView>
                 
-                
+            <KeyboardAvoidingView behavior="padding" enabled>
                 <View style={ content }>
                     
                     <Text style={ logo }> My Trainer </Text>
                     
                         <View style={ inputContainer }>
-                            
+                            <KeyboardAvoidingView behavior="padding" enabled> 
+
                             <CardSection>
                                 <Input 
                                 label="Email"
@@ -101,7 +107,7 @@ class Login extends Component {
                                 value={this.props.email}
                                 />
                             </CardSection>
-                            
+                           
                             <CardSection>
                             <Input
                             label="Password"
@@ -114,27 +120,31 @@ class Login extends Component {
                             <Text style={ errorTextStyle }>
                                 {error}
                             </Text>
+                            </KeyboardAvoidingView>
                             
+                            <View style={linkContent}>
                                 <Text style={textStyle}>Don't have an account? </Text>    
                                 <TouchableOpacity  onPress={() => Actions.register()}>
                                     <Text style={linkStyle}> Create An Account </Text>
                                 </TouchableOpacity>
-                          
-                      
                                 
                                 <TouchableOpacity  onPress={() => Actions.forgotPass()}>
                                     <Text style={linkStyle}>Forgot your password?</Text>
                                 </TouchableOpacity>
                        
                                 {this.buttonRender()} 
+                            </View>
 
                               <RkButton rkType="xlarge" onPress={this._loginFB.bind(this)}>Connect with Facebook</RkButton>     
                         </View>
                    
-                </View>        
+                </View>   
+                </KeyboardAvoidingView>
+
                 </ScrollView>
+                
         </ImageBackground>
-        
+           
         );
     }
 }
@@ -193,11 +203,16 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         //color: 'blue',
         //backgroundColor: 'rgba(255,255,255,0.6)',
-        flexDirection: 'column',
+        flexDirection: 'row',
         //alignItems: 'center',
         //justifyContent: 'center',
         //marginLeft: 55
     }, 
+    
+    linkContent: {
+        alignItems: 'center'
+    },
+    
     errorTextStyle: {
         fontSize: 17,
         alignSelf: 'center',

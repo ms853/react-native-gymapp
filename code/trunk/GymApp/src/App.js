@@ -28,8 +28,9 @@ class App extends Component {
       messagingSenderId: "822925665706"
     };
 
-  
-     !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();     
+     !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();  
+     
+
    
   }
   
