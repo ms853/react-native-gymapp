@@ -66,7 +66,7 @@ class Home extends Component{
                 <ScrollView>
                     <View>
                         <Text style={welcomeTextStyle}>
-                            Welcome To My Trainer {this.state.username}
+                            Welcome To My Trainer, {this.state.username}!
                         </Text>
                         <Card
                             title="A Guide To Nutrition"

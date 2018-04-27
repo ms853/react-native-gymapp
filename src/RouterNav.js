@@ -6,6 +6,7 @@ import React from "react";
 import { Router, Scene, Actions } from "react-native-router-flux";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+
 //Components 
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";

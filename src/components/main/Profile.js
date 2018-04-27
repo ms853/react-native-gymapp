@@ -58,6 +58,16 @@ class Profile extends Component{
         this.props.logoutUser();
     }
     
+    renderButton() {
+        const {role} = this.state; //getting the role object from the state object.
+        if(role == 'Personal Trainer') {
+            return (
+                <CardSection>
+                    <Button>Add Clients</Button> 
+                </CardSection>
+            );
+        } 
+    }
  
     render(){
         //ES6 Destructure of states
@@ -68,31 +78,37 @@ class Profile extends Component{
         } = this.state;
 
         return(
-                <View style={styles.backgroundStyle}>
+                <View>
                     <ScrollView>
+                        <View style={styles.profilePicture}>
                             <Avatar 
                                 xlarge
-                                avatarStyle={styles.profilePicture}
-                                iconStyle={styles.profilePicture}
+                                //avatarStyle={styles.profilePicture}
+                                //iconStyle={styles.profilePicture}
                                 rounded
                                 source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"}}
                                 //onPress={}
                                 activeOpacity={0.7}
                             />
+                        </View>
+                        <View style={styles.profilePicture}>
+                            <Text style={styles.profileName}>{fullName}</Text>
+                            <Text style={styles.userRole}>Role - {role}</Text>
+                        </View>
+
                         <CardSection>
-                            <Text>{fullName}</Text>
+                            <Text style={styles.text}>Email Address: {email}</Text>
                         </CardSection>
                         <CardSection>
-                            <Text>{email}</Text>
-                        </CardSection>
-                        <CardSection>
-                            <Text>{phoneNumber}</Text>
+                            <Text style={styles.text}>Phone Number: {phoneNumber}</Text>
                         </CardSection>
                         <CardSection>
                         <Button onPress={() => Actions.cameraScene()}>
                             <Text>Change Profile Picture</Text>
                             </Button>
                         </CardSection>
+
+                        {this.renderButton()}
                         <CardSection>
                             <Button
                             onPress={this.onButtonPress.bind(this)}
@@ -106,9 +122,27 @@ class Profile extends Component{
 }
 
 const styles = {
+
     profilePicture: {
         alignItems: 'center',
         justifyContent: 'center'
+    },
+
+    profileName: { 
+        fontSize: 30,
+        color: '#4682B4',
+        fontWeight: 'bold'
+        
+    },
+    userRole: {
+        fontSize: 20,
+        color: '#4682B4',
+        alignItems: 'center'
+    },
+    
+    text: {
+        fontSize: 15,
+        color: '#000000'
     },
     backgroundStyle: {
         backgroundColor: 'black'
