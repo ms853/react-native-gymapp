@@ -22,7 +22,8 @@ export const REG_EMAIL_INPUT_CHANGED = "signup_email_changed";
 export const REG_PASSWORD_INPUT_CHANGED = "signup_password_changed";
 export const PT_CHECKED = "pt_checkbox_checked";
 export const PT_UNCHECKED = "pt_checkbox_unchecked";
-export const REGISTER_NEW_USER = "registering_new_user";
+export const REGISTER_NEW_GYM_USER = "registering_new_gym_user";
+export const REGISTER_NEW_PT = "registering_new_personal_trainer";
 export const REGISTER_NEW_USER_SUCCESS = "successfully_registered_new_user";
 export const REGISTER_NEW_USER_FAIL = "registering_new_user_failed";
 
