@@ -39,12 +39,11 @@ class Login extends Component {
 
     buttonRender() {
         if(this.props.loading) {
-            return <SpinnerLoader 
-            size={40} 
-            style = {styles.spinnerStyle}
-            type={'Circle'}
-            color={'white'}
-            />;
+            return  <SpinnerLoader 
+                        size="large" 
+                        style = {styles.spinnerStyle}
+                        color='white'
+                    />;
             
         }else{
             return(
@@ -187,7 +186,7 @@ const styles = StyleSheet.create({
         margin: 10,
         padding: 5,
         borderWidth: 1,
-        backgroundColor: 'black'//'rgba(255,255,255,0.6)'
+        backgroundColor: 'black'
     },
     spinnerStyle: {
         flex: 1,
@@ -201,12 +200,7 @@ const styles = StyleSheet.create({
     linkStyle: {
         fontSize: 15,
         fontWeight: 'bold',
-        //color: 'blue',
-        //backgroundColor: 'rgba(255,255,255,0.6)',
         flexDirection: 'row',
-        //alignItems: 'center',
-        //justifyContent: 'center',
-        //marginLeft: 55
     }, 
     
     linkContent: {

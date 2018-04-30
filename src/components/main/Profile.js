@@ -28,29 +28,29 @@ class Profile extends Component{
         var db = firebase.database();
         var auth = firebase.auth();
 
-        if(auth) {
-            const { currentUser } = auth;
-            db.ref(`/users/${currentUser.uid}/user_info`)
-            .once("value", snapshot => {
-                var name = snapshot.val().firstName + " " + snapshot.val().surName;
-                var email = snapshot.val().email;
-                var gender = snapshot.val().gender;
-                var role = snapshot.val().role;
-                var phone = snapshot.val().phoneNumber;
-                //Printing the values to see if the values were successfully retrieved.
-                console.log("The values retrieved from firebase are: " 
-                + name + "\n" + email + "\n" + gender + '\n' + role + '\n' + phone);
-                this.setState({
-                    fullName: name,
-                    email: email,
-                    gender: gender,
-                    role: role,
-                    phoneNumber: phone
-                });
-            });
-        } else {
-            console.log("Failed to retrieve user's values from the database");
-        }
+        // if(auth) {
+        //     const { currentUser } = auth;
+        //     db.ref(`/users/${currentUser.uid}/user_info`)
+        //     .once("value", snapshot => {
+        //         var name = snapshot.val().firstName + " " + snapshot.val().surName;
+        //         var email = snapshot.val().email;
+        //         var gender = snapshot.val().gender;
+        //         var role = snapshot.val().role;
+        //         var phone = snapshot.val().phoneNumber;
+        //         //Printing the values to see if the values were successfully retrieved.
+        //         console.log("The values retrieved from firebase are: " 
+        //         + name + "\n" + email + "\n" + gender + '\n' + role + '\n' + phone);
+        //         this.setState({
+        //             fullName: name,
+        //             email: email,
+        //             gender: gender,
+        //             role: role,
+        //             phoneNumber: phone
+        //         });
+        //     });
+        // } else {
+        //     console.log("Failed to retrieve user's values from the database");
+        // }
 
     }
   
@@ -86,7 +86,7 @@ class Profile extends Component{
                                 //avatarStyle={styles.profilePicture}
                                 //iconStyle={styles.profilePicture}
                                 rounded
-                                source={{uri: "https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg"}}
+                                //source={{uri: ""}}
                                 //onPress={}
                                 activeOpacity={0.7}
                             />

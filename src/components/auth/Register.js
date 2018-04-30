@@ -8,7 +8,8 @@ import {
     registerUpdate,
     email_validator, 
     password_validator,
-    register_new_user
+    registerNewGymUser,
+    registerNewPersonalTrainer
 } from '../../actions/AuthAction';
 import { Actions } from "react-native-router-flux";
 import { Header, CheckBox } from "react-native-elements";
@@ -42,10 +43,13 @@ class Register extends Component{
             gender, phoneNumber, role 
         } = this.props;
 
-        
         console.log("Your Phone->", phoneNumber)
         //call made to the action creator to register the new user.
-        this.props.register_new_user({firstName, surName, email, password, phoneNumber, gender, role});
+        if(role == 'Gym User') {
+            this.props.registerNewGymUser({firstName, surName, email, password, phoneNumber, gender, role});
+        }else if(role == 'Personal Trainer'){
+            this.props.registerNewPersonalTrainer({firstName, surName, email, password, phoneNumber, gender, role});
+        }
 
     }
     
@@ -53,11 +57,10 @@ class Register extends Component{
     renderButton() {
         if(this.props.loading) {
             return <SpinnerLoader 
-            size={40} 
-            style = {styles.spinnerStyle}
-            type={'Circle'}
-            color={'white'}
-            />;
+                        size="large" 
+                        style = {styles.spinnerStyle}
+                        color='white'
+                    />;
             
         }else{
             return(   
@@ -68,7 +71,7 @@ class Register extends Component{
             );
         }
     }
-    
+   
     
     render() {
         //ES6 Destructuring of prop objects for form values
@@ -145,6 +148,7 @@ class Register extends Component{
                     <Picker
                         style={{ flex: 1, margin: 2 }}
                         selectedValue={gender}
+                        mode="dropdown"
                         onValueChange={value => this.props.registerUpdate({ prop: "gender", value})}
                     >
                         <Picker.Item label="Male" value="male" />
@@ -252,5 +256,6 @@ export default connect(MapStateToProps, {
     registerUpdate,
     email_validator, 
     password_validator,
-    register_new_user    
+    registerNewGymUser,
+    registerNewPersonalTrainer    
 })(Register);

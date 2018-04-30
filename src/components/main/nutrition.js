@@ -1,13 +1,24 @@
 import React, { Component } from "react";
-import { Text, View, ImageBackground, Image, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import { Text, View, ImageBackground, Image, 
+    TouchableOpacity, ScrollView, FlatList 
+} from "react-native";
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { RkButton } from "react-native-ui-kitten";
 import { Card, CardSection, Input, SpinnerLoader, Button } from "../reusable";
+import { nutritionApi } from "../../utils/NutritionApi";
+
 
 class Nutrition extends Component {
     
-   
+    constructor(props) {
+        super(props);
+        info: []
+    }
+
+    componentWillMount() {
+        nutritionApi
+    }
     render() {
         
         //ES6 Destructuring     
@@ -43,7 +54,7 @@ class Nutrition extends Component {
     }
 }
 
-const styles = StyleSheet.create({ 
+const styles = { 
     backgroundImg: {    
         height: '100%',
         width: '100%',
@@ -95,7 +106,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         //marginLeft: 55
     }
-});
+};
 
 //Map state to props function 
 //the property (i.e. email) comes from the reducer

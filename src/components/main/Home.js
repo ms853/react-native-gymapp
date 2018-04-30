@@ -4,45 +4,31 @@ import { connect } from 'react-redux';
 import firebase from 'firebase';
 import { Actions } from 'react-native-router-flux';
 import { Card } from "react-native-elements";
-import { Button } from '../reusable';
+import { Button, CardSection } from '../reusable';
 
 
 class Home extends Component{
     
-    constructor(props){
-        super(props);
-
+    
+    constructor(){
+        super();
         this.state = {
-            username: ''
-        }
+            username: '',
+            useRole: ''
+        };
     }
+        
+    
     
 
     //This class will be responsible for rendering the appropriate view based on the user role. 
     componentWillMount() {
-        this.sessionState();
+        //this.sessionState();
+        this.fetchUserName();
+        
 
-        var auth = firebase.auth();  //auth variable
-        const db = firebase.database(); //database object
-         
-       // this._loginState() //login session method call.
-
-            if(auth) { //If user is signed in, retrieve their first name! 
-                const { currentUser } = firebase.auth(); //get current authenticated user.
-
-                db.ref(`/users/${currentUser.uid}/user_info`) //Database reference including the user id.
-                .once("value", snapshot => { //The query type used here is 'once' to listen once for data in the database. 
-                    var firstName = snapshot.val().firstName; //This gets the firstName of the user signed in. 
-                    console.log("Yo ", firstName); //printing to check the value obtained from the database.
-                    this.setState({
-                        username: firstName
-                    });
-                    console.log('LOOK ->', this.state.username);
-                });
                
-            }else{
-                console.log("The user's name cannot be retrieved from the database, because user is not authenticated");
-            }
+               
     }
   
     
@@ -54,6 +40,45 @@ class Home extends Component{
     });
     }
 
+    fetchUserName() {
+        var auth = firebase.auth();  //auth variable
+        const db = firebase.database(); //database object
+        var name;
+       
+        var userId = firebase.auth().currentUser.uid;
+        db.ref(`/gym_users/${userId}/user_info`)
+        .once('value')
+        .then((snap) => {
+            console.log('snap value => ', snap.val()); //Here I am printing the value of the snap data retrieved from the database.  
+            //Here I only assign the snapshot value only if it does not return empty.
+            if(snap.val() == null) {
+                console.log("Snapshot value is empty");
+            }else{
+                name = snap.val().firstName || 'Anonymous';
+                
+                console.log('LOOK ->',name);
+                this.setState({ username: name });
+            }
+           
+        }).catch((error) => console.error(error.message));
+
+        //If the name is not defined I proceed to read the from the personal trainer node. 
+        if(name == undefined){
+            firebase.database().ref(`/personal_trainers/${userId}/user_info`)
+            .once('value')
+            .then((snap) => {
+                console.log('snap value => ', snap.val());  
+                if(snap.val() == null){
+                    console.log("Snapshot value is empty");
+                }else{
+                    name = snap.val().firstName || 'Anonymous';
+                    this.setState({ username: name });
+                }
+                
+            })
+            .catch((error) => console.error(error.message));
+        }
+    }
    
     render(){
         //ES6 Destructuring of style objects. 
@@ -65,9 +90,12 @@ class Home extends Component{
             >
                 <ScrollView>
                     <View>
+                        <CardSection>
                         <Text style={welcomeTextStyle}>
-                            Welcome To My Trainer, {this.state.username}!
+                            Hello {this.state.username}, 
+                            Welcome To My Trainer!
                         </Text>
+                        </CardSection>
                         <Card
                             title="A Guide To Nutrition"
                             image={require('../../assets/images/groceries.jpg')}
@@ -109,7 +137,7 @@ const homeStyle = {
         alignSelf: 'stretch'           
     },
     welcomeTextStyle: {
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: 'bold',
         alignItems: 'center',
         

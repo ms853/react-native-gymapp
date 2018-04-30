@@ -1,27 +1,27 @@
+//This is a reusable spinner component!
 import React from 'react';
-import { View } from 'react-native';
-import Spinner from 'react-native-spinkit';
+import { View, Text, ActivityIndicator } from 'react-native';
 
-const SpinnerLoader = ({ style, color, size, type }) => {
+const SpinnerLoader = ({ style, color, size }) => {
   return (
-    <View> 
-      <Spinner 
-        style={style}
-        color={color}
-        size={size}
-        type={type}
+    <View style={styles.spinnerStyle}> 
+       <ActivityIndicator 
+        size={size || 'large'} 
+        animating
+        style = {style}
+        color={color} //default color grey will be used. 
       />
     </View>
   );
 };
 
-// const styles = {
-//   spinnerStyle: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center'
-//   }
-// };
+const styles = {
+  spinnerStyle: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
+};
 /*
       <ActivityIndicator 
       size={size || 'large'} 
@@ -31,7 +31,7 @@ const SpinnerLoader = ({ style, color, size, type }) => {
       />
 */
 
-export { SpinnerLoader };
+export { SpinnerLoader }; //Doing this will allow the componenet to be exported through index. 
 
 
 

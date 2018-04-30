@@ -36,7 +36,7 @@ export const addExercise = ({ exercise_name, weight, number_of_sets, number_of_r
          * Then the objects are pushed to that path of the database,
          * followed by some error handling if it fails. 
         **/
-        db.ref(`/users/${currentUser.uid}/exercises`)
+        db.ref(`/exercises/${currentUser.uid}`)
         .push({ exercise_name, weight, number_of_sets, number_of_reps })
         //Navigate to exercise list component.
         .then(() =>  Actions.workoutList())
@@ -63,7 +63,7 @@ export const fetchExercises = () => {
         //-describes the data. 
         //the '.on' is a persistant promise is a firebase query that listens for changes 
         //to the data and reads it.
-        db.ref(`/users/${currentUser.uid}/exercises`)
+        db.ref(`/exercises/${currentUser.uid}`)
             .on('value', snapshot => {
                 //returns an object everytime new value is found in the database.
                dispatch({ type: FETCH_EXERCISE_SUCCESS, payload: snapshot.val() }); 
@@ -79,7 +79,7 @@ export const updateExercise = ({ exercise_name, weight, number_of_sets, number_o
 
     return(dispatch) => {
         //this reference points to the unique id assigned to the specific exercise in my database.
-        database.ref(`/users/${currentUser.uid}/exercises/${uid}`)
+        database.ref(`/exercises/${currentUser.uid}/${uid}`)
         .set({
             exercise_name: exercise_name,
             weight: weight,
@@ -98,7 +98,7 @@ export const deleteExercise = ({ exercise_name, weight, number_of_sets, number_o
     const db = firebase.database();
 
     return(dispatch) => {
-        db.ref(`/users/${currentUser.uid}/exercises/${uid}`)
+        db.ref(`/exercises/${currentUser.uid}/${uid}`)
         .remove()
         .then(() => {
             dispatch({ type: DELETE_EXERCISE});

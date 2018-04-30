@@ -20,7 +20,8 @@ import {
     REG_UPDATE,
     REG_EMAIL_INPUT_CHANGED,
     REG_PASSWORD_INPUT_CHANGED,
-    REGISTER_NEW_USER,
+    REGISTER_NEW_GYM_USER,
+    REGISTER_NEW_PT,
     REGISTER_NEW_USER_FAIL,
     REGISTER_NEW_USER_SUCCESS,
     VALID_NAME,
@@ -206,38 +207,63 @@ export const regPasswordChanged = (text) => {
 
 
 //Action creator for registering new user
-export const register_new_user = ({ firstName, surName, email, password, phoneNumber, gender, role}) => {  
-    const auth = firebase.auth();
-    
-    return(dispatch) => {
-        dispatch({ type: REGISTER_NEW_USER });
+export const registerNewPersonalTrainer = ({ firstName, surName, email, password, phoneNumber, gender, role }) => {
+    var auth = firebase.auth();
 
-        //create new account
-        auth.createUserWithEmailAndPassword(email, password)
+    return(dispatch) => {
+        dispatch({ type: REGISTER_NEW_GYM_USER });
+        
+        //Create new user 
+        auth.createUserWithEmailAndPassword(email,password)
         .then((user) => signupSuccess(dispatch, user))
         .catch((error) => {
             signupFail(dispatch);
-            console.error(error);
+            Alert.alert(error.message);
         })
-        
-        //extended promise is added here to avoid errors  
         .then(() => {
-        if(auth) {
-            //call to save user details if the auth is not null.
-            saveNewUserDetails({ firstName, surName, email, phoneNumber, gender, role });
-            console.log("New User " + auth + " " + "details have been saved!");
-            
-            
-        } else {
-            Alert.alert("User must be authenticated before details are saved!");
-        }//Navigate to home page. 
+            if(auth) {
+               // const { currentUser } = auth;
+                //user = currentUser.email;
+                //Save New Gym Users Details.
+                savePTDetails({ firstName, surName, email, phoneNumber, gender, role });
+                Alert.alert("Hello, your details have been saved successfully");
+            }else{
+                console.log("Details were not saved because user is not authenticated!");
+            }
         }).then(() => Actions.main())
-        .catch((error) => alert(error));
-    
-
+        .catch((error) => alert(error.message));
+        
     };
+};
 
-}
+export const registerNewGymUser = ({ firstName, surName, email, password, phoneNumber, gender, role }) => {
+    const auth = firebase.auth();
+
+    return(dispatch) => {
+        dispatch({ type: REGISTER_NEW_PT });
+        
+        //Create new user 
+        auth.createUserWithEmailAndPassword(email,password)
+        .then((user) => signupSuccess(dispatch, user))
+        .catch((error) => {
+            signupFail(dispatch);
+            Alert.alert(error.message);
+        })
+        .then(() => {
+            if(auth) {
+                //const { currentUser } = auth;
+                //user = currentUser.email;
+                //Save New Gym Users Details.
+                saveGymUserDetails({ firstName, surName, email, phoneNumber, gender, role });
+                Alert.alert("Hello, your details have been saved successfully");
+            }else{
+                console.log("Details were not saved because user is not authenticated!");
+            }
+        }).then(() => Actions.main())
+        .catch((error) => alert(error.message));
+        
+    };
+};
 
 //Action creators returning action objects respectively based on the outcome 
 //of the signup. 
@@ -252,11 +278,12 @@ const signupFail = (dispatch) => {
     dispatch({ type: REGISTER_NEW_USER_FAIL });
 };
 
-const saveNewUserDetails = ({ firstName, surName, email, phoneNumber, gender, role}) => {
+
+const saveGymUserDetails = ({ firstName, surName, email, phoneNumber, gender, role}) => {
     const { currentUser } = firebase.auth();
     const db = firebase.database();
 
-    db.ref(`/users/${currentUser.uid}/user_info`)
+    db.ref(`gym_users/${currentUser.uid}/user_info`)
     .set({
         firstName: firstName,
         surName: surName,
@@ -264,6 +291,24 @@ const saveNewUserDetails = ({ firstName, surName, email, phoneNumber, gender, ro
         phoneNumber: phoneNumber,
         gender: gender,
         role: role
-    }).catch((error) => alert(error));
+    }).catch((error) => alert(error.message));
+};
+
+const savePTDetails = ({ firstName, surName, email, phoneNumber, gender, role }) => {
+    const { currentUser } = firebase.auth();
+    const db = firebase.database();
+
+    db.ref(`personal_trainers/${currentUser.uid}/user_info`)
+    .set({
+        firstName: firstName,
+        surName: surName,
+        email: email,
+        phoneNumber: phoneNumber,
+        gender: gender,
+        role: role
+    }).catch((error) => alert(error.message));
     
 };
+
+
+

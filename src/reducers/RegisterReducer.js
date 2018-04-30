@@ -12,7 +12,9 @@ import {
     VALID_PASSWORD,
     INVALID_PASSWORD,
     VALID_NAME,
-    INVALID_NAME
+    INVALID_NAME,
+    REGISTER_NEW_GYM_USER,
+    REGISTER_NEW_PT
 } from "../actions/types";
 
 //inital state object that contains the initial values of the prop objects
@@ -64,7 +66,10 @@ export default (state = initialStates, action) => {
         //props and values get assigned through runtime.
             return {...state, [action.payload.prop]: action.payload.value };
 
-        case REGISTER_NEW_USER:
+        case REGISTER_NEW_GYM_USER:
+            return {...state, loading: true};
+        
+        case REGISTER_NEW_PT:
             return {...state, loading: true};
            
         case REGISTER_NEW_USER_SUCCESS:
