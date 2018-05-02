@@ -9,6 +9,7 @@ import {
     email_validator, 
     password_validator,
     registerNewGymUser,
+    registerNewClient,
     registerNewPersonalTrainer
 } from '../../actions/AuthAction';
 import { Actions } from "react-native-router-flux";
@@ -17,6 +18,7 @@ import { RkButton } from 'react-native-ui-kitten';
 import { Card, CardSection, Input, SpinnerLoader } from '../reusable';
 import PhoneInput from 'react-native-phone-input';
 
+//Redux State Management library will be used for this Class Componenet. 
 class Register extends Component{
     
     //Two helper methods for tracking the changes to email and password in form. 
@@ -47,7 +49,11 @@ class Register extends Component{
         //call made to the action creator to register the new user.
         if(role == 'Gym User') {
             this.props.registerNewGymUser({firstName, surName, email, password, phoneNumber, gender, role});
-        }else if(role == 'Personal Trainer'){
+        }
+        if(role == 'Client') {
+            this.props.registerNewClient({firstName, surName, email, password, phoneNumber, gender, role});
+        }
+        if(role == 'Personal Trainer'){
             this.props.registerNewPersonalTrainer({firstName, surName, email, password, phoneNumber, gender, role});
         }
 
@@ -65,7 +71,7 @@ class Register extends Component{
         }else{
             return(   
                 <RkButton rkType="xlarge" style={styles.buttonStyle} 
-                onPress={this.onRegButtonPress.bind(this)}>
+                    onPress={this.onRegButtonPress.bind(this)}>
                  Register 
                 </RkButton>
             );
@@ -183,6 +189,7 @@ class Register extends Component{
                         onValueChange={value => this.props.registerUpdate({ prop: "role", value})}
                     >
                         <Picker.Item label="Gym User" value="Gym User" />
+                        <Picker.Item label="Client" value="Client" />
                         <Picker.Item label="Personal Trainer" value="Personal Trainer" />
                     </Picker>    
                     </CardSection>     
@@ -200,6 +207,12 @@ const styles = {
     
     textStyle: {
         fontSize: 15
+    },
+
+    spinnerStyle: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
 
     phoneContainerStyle: {
@@ -257,5 +270,6 @@ export default connect(MapStateToProps, {
     email_validator, 
     password_validator,
     registerNewGymUser,
+    registerNewClient,
     registerNewPersonalTrainer    
 })(Register);

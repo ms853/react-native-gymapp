@@ -25,7 +25,8 @@ import {
     REGISTER_NEW_USER_FAIL,
     REGISTER_NEW_USER_SUCCESS,
     VALID_NAME,
-    INVALID_NAME
+    INVALID_NAME,
+    REGISTER_NEW_CLIENT
 } from "./types";
 
 
@@ -265,6 +266,33 @@ export const registerNewGymUser = ({ firstName, surName, email, password, phoneN
     };
 };
 
+export const registerNewClient = ({ firstName, surName, email, password, phoneNumber, gender, role }) => {
+    const auth = firebase.auth();
+
+    return(dispatch) => {
+        dispatch({ type: REGISTER_NEW_CLIENT });
+        
+        //Create new user 
+        auth.createUserWithEmailAndPassword(email,password)
+        .then((user) => signupSuccess(dispatch, user))
+        .catch((error) => {
+            signupFail(dispatch);
+            Alert.alert(error.message);
+        })
+        .then(() => {
+            if(auth) {
+                //Save New Gym Users Details.
+                saveClientDetails({ firstName, surName, email, phoneNumber, gender, role });
+                Alert.alert("Hello, your details have been saved successfully");
+            }else{
+                console.log("Details were not saved because user is not authenticated!");
+            }
+        }).then(() => Actions.main())
+        .catch((error) => alert(error.message));
+        
+    };
+};
+
 //Action creators returning action objects respectively based on the outcome 
 //of the signup. 
 const signupSuccess = (dispatch, user) => {
@@ -297,8 +325,10 @@ const saveGymUserDetails = ({ firstName, surName, email, phoneNumber, gender, ro
 const savePTDetails = ({ firstName, surName, email, phoneNumber, gender, role }) => {
     const { currentUser } = firebase.auth();
     const db = firebase.database();
+    //Get the new push key as the client id
+    //var clientId = db.ref().child('clients').push().key(); 
 
-    db.ref(`personal_trainers/${currentUser.uid}/user_info`)
+    db.ref(`personal_trainers/${currentUser.uid}`)
     .set({
         firstName: firstName,
         surName: surName,
@@ -306,6 +336,21 @@ const savePTDetails = ({ firstName, surName, email, phoneNumber, gender, role })
         phoneNumber: phoneNumber,
         gender: gender,
         role: role
+    }).catch((error) => alert(error.message));
+    
+};
+
+
+const saveClientDetails = ({ firstName, surName, email, phoneNumber, gender, role }) => {
+    const { currentUser } = firebase.auth();
+    const db = firebase.database();
+    
+    db.ref(`clients/${currentUser.uid}`)
+    //fire.push().key()
+    .push({
+        firstName, surName,
+        email, phoneNumber,
+        gender, role
     }).catch((error) => alert(error.message));
     
 };

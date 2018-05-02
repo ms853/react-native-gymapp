@@ -37,6 +37,7 @@ export const addExercise = ({ exercise_name, weight, number_of_sets, number_of_r
          * followed by some error handling if it fails. 
         **/
         db.ref(`/exercises/${currentUser.uid}`)
+        //Note that push method creates new unique id to identify each exercise.
         .push({ exercise_name, weight, number_of_sets, number_of_reps })
         //Navigate to exercise list component.
         .then(() =>  Actions.workoutList())
@@ -106,7 +107,6 @@ export const deleteExercise = ({ exercise_name, weight, number_of_sets, number_o
         }).catch((error) => console.error(error));
     };
     
-
 };
 
 

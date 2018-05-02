@@ -18,17 +18,11 @@ class Home extends Component{
         };
     }
         
-    
-    
 
     //This class will be responsible for rendering the appropriate view based on the user role. 
     componentWillMount() {
-        //this.sessionState();
         this.fetchUserName();
-        
-
-               
-               
+                        
     }
   
     
@@ -64,7 +58,7 @@ class Home extends Component{
 
         //If the name is not defined I proceed to read the from the personal trainer node. 
         if(name == undefined){
-            firebase.database().ref(`/personal_trainers/${userId}/user_info`)
+            firebase.database().ref(`/personal_trainers/${userId}`)
             .once('value')
             .then((snap) => {
                 console.log('snap value => ', snap.val());  
@@ -78,6 +72,23 @@ class Home extends Component{
             })
             .catch((error) => console.error(error.message));
         }
+
+        //If the name is not defined I proceed to read the from the clients node. 
+        // if(name == undefined){
+        //     firebase.database().ref(`/clients/${userId}`)
+        //     .once('value')
+        //     .then((snap) => {
+        //         console.log('snap value => ', snap.val());  
+        //         if(snap.val() == null){
+        //             console.log("Snapshot value is empty");
+        //         }else{
+        //             name = snap.val().firstName || 'Anonymous';
+        //             this.setState({ username: name });
+        //         }
+                
+        //     })
+        //     .catch((error) => console.error(error.message));
+        // }
     }
    
     render(){
@@ -85,7 +96,7 @@ class Home extends Component{
         const { containerStyle, content, welcomeTextStyle } = homeStyle;
         return(
             <ImageBackground
-                //source={{uri: "https://cdn.pixabay.com/photo/2015/02/23/20/00/bodybuilder-646482_960_720.jpg"}}
+                source={require('../../assets/images/man.jpg')}
                 style={homeStyle.backgroundImg}
             >
                 <ScrollView>
@@ -96,6 +107,20 @@ class Home extends Component{
                             Welcome To My Trainer!
                         </Text>
                         </CardSection>
+                        <Card
+                            title="Create Your Workouts"
+                            image={require('../../assets/images/exercise.jpg')}
+                        >
+                            <Text>
+                                Click here to start customising your workout plan, by adding the weights,  
+                                number of sets and repetitions. Train like never before! 
+                            </Text>
+                            
+                            <Button onPress={() => Actions.workout()}>
+                                Start Now
+                            </Button>
+                        </Card> 
+                        
                         <Card
                             title="A Guide To Nutrition"
                             image={require('../../assets/images/groceries.jpg')}
