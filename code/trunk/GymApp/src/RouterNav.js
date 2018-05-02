@@ -6,8 +6,8 @@ import React from "react";
 import { Router, Scene, Actions } from "react-native-router-flux";
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
-//Components 
+//List of Components that will be used configure the navigation 
+//within the application.
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import forgotPass from './components/auth/forgotPass';
@@ -20,7 +20,9 @@ import WorkoutList from "./components/main/WorkoutList";
 import EditExercise from './components/main/EditExercise';
 import WorkoutTutorials from './components/main/WorkoutTutorials';
 import Nutrition from "./components/main/nutrition";
-
+import AddClient from "./components/main/AddClient";
+import ProfileEdit from "./components/main/ProfileEdit";
+import ClientList from './components/main/ClientList';
 
 const tabIcon = ({ iconName, selected }) => {
     return <Icon name="user" size={30} color="#900" />;
@@ -33,7 +35,7 @@ const RouterNav = () => {
             <Scene key="root" hideNavBar>
                 
                 <Scene key="auth" hideNavBar>
-                    <Scene key="login" component={Login} initial />
+                    <Scene key="login" component={Login} />
                     <Scene key="register" component={Register}  />
                     <Scene key="forgotPass" component={forgotPass} />
                     <Scene key="passReset" component={passReset} />
@@ -49,8 +51,6 @@ const RouterNav = () => {
                         <Scene key="homePage" title="Home Page" icon={tabIcon}> 
                             <Scene           
                                 key="home"
-                                onRight={() => Actions.workout()}
-                                rightTitle=" Create Your Workout" 
                                 component={Home} 
                                 title="Home"
                             />
@@ -93,7 +93,6 @@ const RouterNav = () => {
                            
                     />
                 </Scene>
-
                 
                 <Scene key="tutorials">
                     <Scene
@@ -103,8 +102,18 @@ const RouterNav = () => {
                           
                     />
                 </Scene>
-            
-            
+
+                <Scene key="clients">
+                    <Scene key="addClients" title="Add Your Clients" component={AddClient} />
+                </Scene>
+
+                <Scene key="profileEdit">
+                    <Scene key="editProfile" title="Update Your Profile" component={ProfileEdit} />
+                </Scene>
+
+                 <Scene key="clients">
+                    <Scene key="clientList" title="Your List of Clients" component={ClientList} />
+                </Scene>
             </Scene>
         
         </Router>

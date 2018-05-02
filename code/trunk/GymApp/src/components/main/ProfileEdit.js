@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { Header } from "react-native-elements";
-import { Card, CardSection, Input, Button } from "./reusable";
+import { Card, CardSection, Input, Button } from "../reusable";
 
-class CreateWorkoutPlanner extends Component{
+class ProfileEdit extends Component{
     render(){
         return(
 
@@ -11,26 +11,28 @@ class CreateWorkoutPlanner extends Component{
                 <Card>
                     <CardSection>
                         <Input 
-                            label="Workout Title"
+                            label="Enter Password"
                             placeholder ="e.g. Bench Press"
                         />
                     </CardSection>
-
+                    <CardSection>
+                        <Button>Update Email Address</Button>
+                    </CardSection>
                     <CardSection>
                         <Input 
-                            label="Number of Sets"
-                            placeholder ="enter number of sets"
+                            label="Current Password"
+                            placeholder ="enter password"
                         />
                     </CardSection>
                     <CardSection>
                         <Input 
-                            label="Number of Repetitions"
-                            placeholder ="e.g. 8 reps"
+                            label="New Password"
+                            placeholder ="enter password"
                         />
                     </CardSection>
 
                     <CardSection>
-                        <Button> Add Exercise </Button>
+                        <Button> Update Password </Button>
                     </CardSection>
 
                 </Card>
@@ -39,4 +41,4 @@ class CreateWorkoutPlanner extends Component{
     }
 }
 
-export default CreateWorkoutPlanner;
+export default ProfileEdit;

@@ -14,7 +14,8 @@ import {
     VALID_NAME,
     INVALID_NAME,
     REGISTER_NEW_GYM_USER,
-    REGISTER_NEW_PT
+    REGISTER_NEW_PT,
+    REGISTER_NEW_CLIENT
 } from "../actions/types";
 
 //inital state object that contains the initial values of the prop objects
@@ -27,7 +28,6 @@ const initialStates = {
     gender: 'male' || 'female',
     email: '',
     password: '',
-    pTChecked: false,
     phoneNumber: '',
     role: 'Gym User' || 'Personal Trainer'
 };
@@ -71,6 +71,9 @@ export default (state = initialStates, action) => {
         
         case REGISTER_NEW_PT:
             return {...state, loading: true};
+        
+        case REGISTER_NEW_CLIENT:
+            return {...state, loading: true};    
            
         case REGISTER_NEW_USER_SUCCESS:
             return {...state, ...initialStates, user: action.payload };

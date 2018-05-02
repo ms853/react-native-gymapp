@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, ImageBackground } from 'react-native';
 import { Avatar } from 'react-native-elements';
 import firebase from 'firebase';
 import { connect } from 'react-redux';
@@ -25,45 +25,136 @@ class Profile extends Component{
     }
     
     componentWillMount() {
+        //As soon as the component renders the current users 
+        //information will fetched from firebase and rendered to the screen.
+        this.fetchUserProfile();
+       
+    }
+
+    //The following method, will read two nodes in the database.
+    //If the first snapshot returns null it will then read personal trainer node.
+    fetchUserProfile = () => {
+        
         var db = firebase.database();
         var auth = firebase.auth();
+        var userId = auth.currentUser.uid;
 
-        // if(auth) {
-        //     const { currentUser } = auth;
-        //     db.ref(`/users/${currentUser.uid}/user_info`)
-        //     .once("value", snapshot => {
-        //         var name = snapshot.val().firstName + " " + snapshot.val().surName;
-        //         var email = snapshot.val().email;
-        //         var gender = snapshot.val().gender;
-        //         var role = snapshot.val().role;
-        //         var phone = snapshot.val().phoneNumber;
-        //         //Printing the values to see if the values were successfully retrieved.
-        //         console.log("The values retrieved from firebase are: " 
-        //         + name + "\n" + email + "\n" + gender + '\n' + role + '\n' + phone);
-        //         this.setState({
-        //             fullName: name,
-        //             email: email,
-        //             gender: gender,
-        //             role: role,
-        //             phoneNumber: phone
-        //         });
-        //     });
-        // } else {
-        //     console.log("Failed to retrieve user's values from the database");
+        //Initial variables that will be used to store the profile information 
+        var name, email, gender, role, phone; 
+
+        db.ref(`/gym_users/${userId}/user_info`)
+        .once('value')
+        .then((snapshot) => {
+            console.log('snap value => ', snapshot.val()); 
+            //Here I am printing the value of the snap data retrieved from the database.  
+            //Here I only assign the snapshot value only if it does not return empty.
+            if(snapshot.val() == null) {
+                console.log("Snapshot value is empty");
+            }else{
+                 name = snapshot.val().firstName + " " + snapshot.val().surName;
+                 email = snapshot.val().email;
+                 gender = snapshot.val().gender;
+                 role = snapshot.val().role;
+                 phone = snapshot.val().phoneNumber;
+                //Printing the values to see if the values were successfully retrieved.
+                console.log("The values retrieved from firebase are: " 
+                + name + "\n" + email + "\n" + gender + '\n' + role + '\n' + phone);
+               //Then set all the states in the component.
+                this.setState({
+                    fullName: name,
+                    email: email,
+                    gender: gender,
+                    role: role,
+                    phoneNumber: phone
+                });
+
+            }
+        }).catch((error) => console.error(error.message)); 
+
+        
+
+        //If Snapshot returns null and name is undefined,
+        //read the personal trainer node in the json tree
+        if(name == undefined) {
+            //var ptID = db.ref().child('personal_trainers').push().key;
+            //console.log(ptID);
+            db.ref(`/personal_trainers/${userId}`)
+            .once('value')
+            .then((snapshot) => {
+                console.log('snap value => ', snapshot.val()); 
+                //Here I am printing the value of the snap data retrieved from the database.  
+                //Here I only assign the snapshot value only if it does not return empty.
+                if(snapshot.val() == null) {
+                    console.log("Snapshot value is empty");
+                }else{
+                     name = snapshot.val().firstName + " " + snapshot.val().surName;
+                     email = snapshot.val().email;
+                     gender = snapshot.val().gender;
+                     role = snapshot.val().role;
+                     phone = snapshot.val().phoneNumber;
+                    //Printing the values to see if the values were successfully retrieved.
+                    console.log("The values retrieved from firebase are: " 
+                    + name + "\n" + email + "\n" + gender + '\n' + role + '\n' + phone);
+                   //Then set all the states in the component.
+                    this.setState({
+                        fullName: name,
+                        email: email,
+                        gender: gender,
+                        role: role,
+                        phoneNumber: phone
+                    });
+    
+                }
+            }).catch((error) => console.error(error.message));     
+    
+        }
+        // //read the client node in the json tree
+        // if(name == undefined) {
+        //     db.ref(`/clients/${userId}`)
+        //     .once('value')
+        //     .then((snapshot) => {
+        //         console.log('snap value => ', snapshot.val()); 
+        //         //Here I am printing the value of the snap data retrieved from the database.  
+        //         //Here I only assign the snapshot value only if it does not return empty.
+        //         if(snapshot.val() == null) {
+        //             console.log("Snapshot value is empty");
+        //         }else{
+        //              name = snapshot.val().firstName + " " + snapshot.val().surName;
+        //              email = snapshot.val().email;
+        //              gender = snapshot.val().gender;
+        //              role = snapshot.val().role;
+        //              phone = snapshot.val().phoneNumber;
+        //             //Printing the values to see if the values were successfully retrieved.
+        //             console.log("The values retrieved from firebase are: " 
+        //             + name + "\n" + email + "\n" + gender + '\n' + role + '\n' + phone);
+        //            //Then set all the states in the component.
+        //             this.setState({
+        //                 fullName: name,
+        //                 email: email,
+        //                 gender: gender,
+        //                 role: role,
+        //                 phoneNumber: phone
+        //             });
+    
+        //         }
+        //     }).catch((error) => console.error(error.message));     
         // }
-
-    }
+    };
   
     onButtonPress() {
         this.props.logoutUser();
     }
     
     renderButton() {
-        const {role} = this.state; //getting the role object from the state object.
+        //getting the role object from the state object.
+        const {role} = this.state; 
+
         if(role == 'Personal Trainer') {
             return (
                 <CardSection>
-                    <Button>Add Clients</Button> 
+                    <Button onPress={() => Actions.clients()}>
+                        Add Clients
+                    </Button> 
                 </CardSection>
             );
         } 
@@ -78,6 +169,7 @@ class Profile extends Component{
         } = this.state;
 
         return(
+           
                 <View>
                     <ScrollView>
                         <View style={styles.profilePicture}>
@@ -103,9 +195,14 @@ class Profile extends Component{
                             <Text style={styles.text}>Phone Number: {phoneNumber}</Text>
                         </CardSection>
                         <CardSection>
-                        <Button onPress={() => Actions.cameraScene()}>
-                            <Text>Change Profile Picture</Text>
+                            <Button onPress={() => Actions.camera()}>
+                                <Text>Change Profile Picture</Text>
                             </Button>
+                        </CardSection>
+                        <CardSection>
+                        <Button onPress={() => Actions.profileEdit()}>
+                            <Text>Update Profile Information</Text>
+                        </Button>
                         </CardSection>
 
                         {this.renderButton()}
@@ -117,6 +214,7 @@ class Profile extends Component{
                 
                     </ScrollView>
                 </View>
+
         );
     }
 }
@@ -146,6 +244,11 @@ const styles = {
     },
     backgroundStyle: {
         backgroundColor: 'black'
+    },
+    backgroundImg: {    
+        height: '100%',
+        width: '100%',
+        alignSelf: 'stretch'           
     }
     
 };
