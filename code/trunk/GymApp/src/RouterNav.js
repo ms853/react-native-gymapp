@@ -35,7 +35,7 @@ const RouterNav = () => {
             <Scene key="root" hideNavBar>
                 
                 <Scene key="auth" hideNavBar>
-                    <Scene key="login" component={Login} />
+                    <Scene key="login" component={Login} initial/>
                     <Scene key="register" component={Register}  />
                     <Scene key="forgotPass" component={forgotPass} />
                     <Scene key="passReset" component={passReset} />
@@ -104,16 +104,14 @@ const RouterNav = () => {
                 </Scene>
 
                 <Scene key="clients">
-                    <Scene key="addClients" title="Add Your Clients" component={AddClient} />
+                    <Scene key="addClients" title="Add Your Clients" component={AddClient} initial />
+                    <Scene key="clientList" title="Your List of Clients" component={ClientList} />
                 </Scene>
 
                 <Scene key="profileEdit">
                     <Scene key="editProfile" title="Update Your Profile" component={ProfileEdit} />
                 </Scene>
 
-                 <Scene key="clients">
-                    <Scene key="clientList" title="Your List of Clients" component={ClientList} />
-                </Scene>
             </Scene>
         
         </Router>
