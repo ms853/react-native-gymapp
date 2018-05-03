@@ -92,7 +92,8 @@ class AddClient extends Component{
         }).then(() => {
             Alert.alert('My Trainer',
             'Client details have been saved.');
-            Actions.clients();
+            Actions.clientList();
+            
         })
         .catch((error) => alert(error.message));
         
@@ -116,8 +117,16 @@ class AddClient extends Component{
             phoneNumber,
             height, weight, gender, goal
         } = this.state;
-
+        
+        //method call to add clients
         this.addNewClient({ firstName, surName, gender, goal, phoneNumber, height, weight });
+        return this.setState({
+            firstName: '', 
+            surName: '', 
+            gender: '', goal: '', 
+            phoneNumber: '', 
+            height: 0, weight: 0
+        });
     };
 
     renderButton() {

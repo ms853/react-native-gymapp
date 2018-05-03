@@ -9,7 +9,6 @@ import {
     email_validator, 
     password_validator,
     registerNewGymUser,
-    registerNewClient,
     registerNewPersonalTrainer
 } from '../../actions/AuthAction';
 import { Actions } from "react-native-router-flux";
@@ -47,12 +46,11 @@ class Register extends Component{
 
         console.log("Your Phone->", phoneNumber)
         //call made to the action creator to register the new user.
+        //The appropriate method will be invoked based on the role of the user.
         if(role == 'Gym User') {
             this.props.registerNewGymUser({firstName, surName, email, password, phoneNumber, gender, role});
         }
-        if(role == 'Client') {
-            this.props.registerNewClient({firstName, surName, email, password, phoneNumber, gender, role});
-        }
+        
         if(role == 'Personal Trainer'){
             this.props.registerNewPersonalTrainer({firstName, surName, email, password, phoneNumber, gender, role});
         }
@@ -189,7 +187,6 @@ class Register extends Component{
                         onValueChange={value => this.props.registerUpdate({ prop: "role", value})}
                     >
                         <Picker.Item label="Gym User" value="Gym User" />
-                        <Picker.Item label="Client" value="Client" />
                         <Picker.Item label="Personal Trainer" value="Personal Trainer" />
                     </Picker>    
                     </CardSection>     
@@ -270,6 +267,5 @@ export default connect(MapStateToProps, {
     email_validator, 
     password_validator,
     registerNewGymUser,
-    registerNewClient,
     registerNewPersonalTrainer    
 })(Register);

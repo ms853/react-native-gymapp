@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, ScrollView, ImageBackground} from 'react-native';
+import Video from "react-native-video";
 
 class WorkoutTutorials extends Component{
     render() {
@@ -12,6 +13,7 @@ class WorkoutTutorials extends Component{
                     <View>
                         <Text> Workout Tutorials </Text>
                     </View>
+                    <Video />
                 </ScrollView>
             </ImageBackground>    
         );
