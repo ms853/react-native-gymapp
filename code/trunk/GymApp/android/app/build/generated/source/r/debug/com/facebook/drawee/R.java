@@ -34,21 +34,21 @@ public final class R {
         public static final int roundingBorderColor = 0x7f0200e8;
         public static final int roundingBorderPadding = 0x7f0200e9;
         public static final int roundingBorderWidth = 0x7f0200ea;
-        public static final int viewAspectRatio = 0x7f02012f;
+        public static final int viewAspectRatio = 0x7f020130;
     }
     public static final class id {
         public static final int center = 0x7f07002c;
-        public static final int centerCrop = 0x7f07002d;
-        public static final int centerInside = 0x7f07002e;
-        public static final int fitCenter = 0x7f07004a;
-        public static final int fitEnd = 0x7f07004b;
-        public static final int fitStart = 0x7f07004c;
-        public static final int fitXY = 0x7f07004d;
-        public static final int focusCrop = 0x7f07004e;
-        public static final int none = 0x7f07006a;
+        public static final int centerCrop = 0x7f07002f;
+        public static final int centerInside = 0x7f070030;
+        public static final int fitCenter = 0x7f07004f;
+        public static final int fitEnd = 0x7f070050;
+        public static final int fitStart = 0x7f070051;
+        public static final int fitXY = 0x7f070052;
+        public static final int focusCrop = 0x7f070053;
+        public static final int none = 0x7f070075;
     }
     public static final class styleable {
-        public static final int[] GenericDraweeHierarchy = { 0x7f020023, 0x7f020037, 0x7f020090, 0x7f020091, 0x7f020092, 0x7f0200c5, 0x7f0200cd, 0x7f0200ce, 0x7f0200d3, 0x7f0200d4, 0x7f0200d5, 0x7f0200d6, 0x7f0200df, 0x7f0200e0, 0x7f0200e1, 0x7f0200e2, 0x7f0200e3, 0x7f0200e4, 0x7f0200e5, 0x7f0200e6, 0x7f0200e7, 0x7f0200e8, 0x7f0200e9, 0x7f0200ea, 0x7f02012f };
+        public static final int[] GenericDraweeHierarchy = { 0x7f020023, 0x7f020037, 0x7f020090, 0x7f020091, 0x7f020092, 0x7f0200c5, 0x7f0200cd, 0x7f0200ce, 0x7f0200d3, 0x7f0200d4, 0x7f0200d5, 0x7f0200d6, 0x7f0200df, 0x7f0200e0, 0x7f0200e1, 0x7f0200e2, 0x7f0200e3, 0x7f0200e4, 0x7f0200e5, 0x7f0200e6, 0x7f0200e7, 0x7f0200e8, 0x7f0200e9, 0x7f0200ea, 0x7f020130 };
         public static final int GenericDraweeHierarchy_actualImageScaleType = 0;
         public static final int GenericDraweeHierarchy_backgroundImage = 1;
         public static final int GenericDraweeHierarchy_fadeDuration = 2;

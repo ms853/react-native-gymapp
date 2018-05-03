@@ -5,13 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/GymApp.iml" filepath="$PROJECT_DIR$/GymApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-camera/android/react-native-camera.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-camera/android/react-native-camera.iml" />
-      <module fileurl="file://C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-camera\android\react-native-camera.iml" filepath="C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-camera\android\react-native-camera.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-fbsdk/android/react-native-fbsdk.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-fbsdk/android/react-native-fbsdk.iml" />
-      <module fileurl="file://C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-fbsdk\android\react-native-fbsdk.iml" filepath="C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-fbsdk\android\react-native-fbsdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-spinkit/android/react-native-spinkit.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-spinkit/android/react-native-spinkit.iml" />
-      <module fileurl="file://C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-spinkit\android\react-native-spinkit.iml" filepath="C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-spinkit\android\react-native-spinkit.iml" />
       <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" />
-      <module fileurl="file://C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-vector-icons\android\react-native-vector-icons.iml" filepath="C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-vector-icons\android\react-native-vector-icons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-video/android/react-native-video.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-video/android/react-native-video.iml" />
     </modules>
   </component>
 </project>

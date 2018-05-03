@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Apr 29 16:05:38 BST 2018
+#Thu May 03 03:29:27 BST 2018
 5.base=C\:\\Users\\User\\third_year_project\\code\\trunk\\GymApp\\android\\app\\build\\intermediates\\assets\\debug
 22.path=fonts/SimpleLineIcons.ttf
 32.set=NATIVE_RESOURCE
