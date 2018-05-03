@@ -7,6 +7,7 @@ INJECTED from C:\Users\User\third_year_project\code\trunk\GymApp\android\app\src
 MERGED from [:react-native-camera] C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-20:12
 MERGED from [:react-native-fbsdk] C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:21:1-30:12
 MERGED from [:react-native-vector-icons] C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-video] C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-video\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\5022c11bde419517f75dc19915d77b9c\AndroidManifest.xml:2:1-15:12
 MERGED from [com.facebook.android:facebook-android-sdk:4.32.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.32.0.aar\07423b370662ee3dab002c0a27d041ab\AndroidManifest.xml:21:1-31:12
 MERGED from [com.facebook.android:facebook-login:4.32.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.32.0.aar\9e3d255f1fe675b55582eac8498fb6a3\AndroidManifest.xml:21:1-31:12
@@ -18,6 +19,7 @@ MERGED from [com.android.support:multidex:1.0.2] C:\Users\User\.gradle\caches\tr
 MERGED from [com.google.android.gms:play-services-vision:10.2.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-vision-10.2.0.aar\ea671775fd96a9a45306285c8f22412e\AndroidManifest.xml:2:1-5:12
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\2d3c034bbf028112454021589c607d9a\AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.react-native-community:cameraview:d529251d24c0a367a28eea28f0eac2269d12f772] C:\Users\User\.gradle\caches\transforms-1\files-1.1\cameraview-d529251d24c0a367a28eea28f0eac2269d12f772.aar\c56244718f626c9f656131a5b1124441\AndroidManifest.xml:14:1-30:12
+MERGED from [com.yqritc:android-scalablevideoview:1.0.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\android-scalablevideoview-1.0.4.aar\ab0e47b91a808b62cb8db18799e5ad8a\AndroidManifest.xml:2:1-12:12
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\6333bf1e6dc3ddb0b9dc8a181d1d240a\AndroidManifest.xml:10:1-18:12
 MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\0f8ecd47ae76f275d2f04be0eac0149b\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.3.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.3.0.aar\fad4713c280ed8587707800950c2fa6e\AndroidManifest.xml:2:1-9:12
@@ -92,6 +94,8 @@ MERGED from [:react-native-fbsdk] C:\Users\User\third_year_project\code\trunk\Gy
 MERGED from [:react-native-fbsdk] C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:24:5-26:41
 MERGED from [:react-native-vector-icons] C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-vector-icons] C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-video] C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-video\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-video] C:\Users\User\third_year_project\code\trunk\GymApp\node_modules\react-native-video\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\5022c11bde419517f75dc19915d77b9c\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\5022c11bde419517f75dc19915d77b9c\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.android:facebook-android-sdk:4.32.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.32.0.aar\07423b370662ee3dab002c0a27d041ab\AndroidManifest.xml:24:5-26:41
@@ -114,6 +118,8 @@ MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\User\.gradle\cac
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\2d3c034bbf028112454021589c607d9a\AndroidManifest.xml:20:5-44
 MERGED from [com.github.react-native-community:cameraview:d529251d24c0a367a28eea28f0eac2269d12f772] C:\Users\User\.gradle\caches\transforms-1\files-1.1\cameraview-d529251d24c0a367a28eea28f0eac2269d12f772.aar\c56244718f626c9f656131a5b1124441\AndroidManifest.xml:17:5-19:41
 MERGED from [com.github.react-native-community:cameraview:d529251d24c0a367a28eea28f0eac2269d12f772] C:\Users\User\.gradle\caches\transforms-1\files-1.1\cameraview-d529251d24c0a367a28eea28f0eac2269d12f772.aar\c56244718f626c9f656131a5b1124441\AndroidManifest.xml:17:5-19:41
+MERGED from [com.yqritc:android-scalablevideoview:1.0.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\android-scalablevideoview-1.0.4.aar\ab0e47b91a808b62cb8db18799e5ad8a\AndroidManifest.xml:8:5-10:41
+MERGED from [com.yqritc:android-scalablevideoview:1.0.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\android-scalablevideoview-1.0.4.aar\ab0e47b91a808b62cb8db18799e5ad8a\AndroidManifest.xml:8:5-10:41
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\6333bf1e6dc3ddb0b9dc8a181d1d240a\AndroidManifest.xml:14:5-16:41
 MERGED from [com.facebook.fbui.textlayoutbuilder:textlayoutbuilder:1.0.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\textlayoutbuilder-1.0.0.aar\6333bf1e6dc3ddb0b9dc8a181d1d240a\AndroidManifest.xml:14:5-16:41
 MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\0f8ecd47ae76f275d2f04be0eac0149b\AndroidManifest.xml:5:5-7:41

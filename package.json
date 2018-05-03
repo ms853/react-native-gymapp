@@ -21,13 +21,14 @@
     "react-native-numeric-input": "^1.3.0",
     "react-native-phone-input": "^0.2.1",
     "react-native-router-flux": "^4.0.0-beta.28",
+    "react-native-stripe-api": "^0.1.0",
     "react-native-ui-kitten": "^3.0.0",
     "react-native-vector-icons": "^4.5.0",
+    "react-native-video": "^2.0.0",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-form": "^7.3.0",
-    "redux-thunk": "^2.2.0",
-    "tipsi-stripe": "^5.2.0"
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "babel-jest": "22.0.4",
