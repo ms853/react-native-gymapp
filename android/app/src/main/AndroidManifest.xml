@@ -30,7 +30,6 @@
               <category android:name="android.intent.category.DEFAULT"/>
               <category android:name="android.intent.category.BROWSABLE"/>
               <data android:host="http://zv64d.app.goo.gl" android:scheme="http"/>
-              <data android:host="https://zv64d.app.goo.gl" android:scheme="https"/>
           </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />

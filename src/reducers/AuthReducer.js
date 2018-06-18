@@ -66,7 +66,7 @@ export default (state = initialState, action) => {
         
         case LOGIN_USER_FAIL:
             Alert.alert('Invalid Email or Password!');
-            return { ...state, email: '', password: '', error: 'The email or password you have entered is invalid. Please try again.', 
+            return { ...state, password: '', error: 'The email or password you have entered is invalid. Please try again.', 
             loading: false,
         };
 

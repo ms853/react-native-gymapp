@@ -2,7 +2,7 @@ import React from 'react';
 import { TextInput, View, Text } from 'react-native';
 
 //This functional component will hold objects, that can be reused to modify this component. 
-const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
+const Input = ({ label, value, onChangeText, placeholder, secureTextEntry, autoCapitalize }) => {
     
     const { labelStyle, containerStyle, inputStyle } = styles;
     return (
@@ -14,6 +14,7 @@ const Input = ({ label, value, onChangeText, placeholder, secureTextEntry }) => 
                 autoCorrect={false} //disable autocorrect
                 style={inputStyle}
                 value={value}
+                autoCapitalize={autoCapitalize}
                 onChangeText={onChangeText} 
                
             />

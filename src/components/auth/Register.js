@@ -107,6 +107,7 @@ class Register extends Component{
                         <Input 
                             label="Email Address"
                             placeholder ="email@mail.com"
+                            autoCapitalize="none"
                             value={email}
                             onChangeText={this.updateEmail.bind(this)}
                         />

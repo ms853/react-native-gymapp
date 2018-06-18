@@ -1,0 +1,301 @@
+
+This is just previous code for the registration form which implemented redux functionality. 
+I might refer back to this in the future. But currently this code is not being used for the registration form.
+
+// ----- Here are action creators that will handle the registration of the user. -------
+
+//Two methods responsible for updating the user input in the signup form. 
+export const registerUpdate = ({ prop, value }) => {
+    return {
+        type: REGISTER_UPDATE,
+        //Returns a key interpulation - values determined through runtime.
+        payload: { prop, value }
+    };
+};
+
+export const regEmailChanged = (text) => {
+    
+    return {
+        type: REG_EMAIL_INPUT_CHANGED,
+        payload: text
+    };
+};
+
+export const regPasswordChanged = (text) => {
+    return {
+        type: REG_PASSWORD_INPUT_CHANGED,
+        payload: text
+    };
+};
+
+
+export const regPTChecked = (value) => {
+    return {
+        type: PT_CHECKED,
+        payload: value
+    }
+}
+
+export const regPTUnChecked = (value) => {
+    return {
+        type: PT_UNCHECKED,
+        payload: value
+    }
+}
+
+
+export const registerUser = ({email, password, fname, sname, phone, gender, pTChecked}) => {
+    //get currentUser Object
+    const db = firebase.database();
+   
+    //console.log(email);
+    return(dispatch) => {
+        dispatch({ type: REGISTER_USER });
+        console.log("My database ->" + firebase);
+
+        //Create a new user account 
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+            .then((user) => {
+                //user = firebase.auth().currentUser;
+                console.log(user);
+               // db.ref(`/users/${user.uid}`).push({hi: 'hi'})
+                db.ref(`/users/${user.uid}`).push({
+                     email, fname, sname, phone, gender, pTChecked 
+                })
+            })
+            .then((user) => registerUserSuccess(dispatch, user))
+            .catch((error) => alert(error));   
+            
+           
+    };
+};
+
+const registerUserFail = (dispatch) => {
+    dispatch({ type: REGISTER_FAIL });
+}
+  
+
+const registerUserSuccess = (dispatch, user) => {
+    console.log('About to register the user!');
+   
+        dispatch({
+            type: REGISTER_SUCCESS, payload: user,
+        });
+        //console.log("This is the current user ->" + user);
+        
+        //console.log("This is the current user ->2" + user); 
+    
+    //Once logged in it will direct me to the main page.
+    Actions.main();
+};
+
+//method for saving user details once they are authenticated!
+// export const saveNewUserDetails = ({ email, fname, sname, phone, gender, pTChecked, role }) =>{
+//     console.log("saveNewUserDetails");
+    
+//     //initialise reference for the database. 
+//     const db = firebase.database();
+
+//     return(dispatch) => {
+ 
+//         //debugger;
+//         console.log(currentUser.uid);
+//         db.ref(`/users/${currentUser.uid}/user_info`).push({ hello: 'hi'})
+//         //db.ref(`/users/${currentUser.uid}/user_info`)
+//         //.push({ email, fname, sname, phone, gender, pTChecked, role })
+
+//         .then(() => { //here I dispatch the action that has been invoked. 
+//             dispatch({type: SAVE_USER_INFO_SUCCESS});
+//         }); 
+        
+//     };
+// };
+
+
+//-------OLD SIGN IN METHOD---------//
+onRegButtonPress(){
+        //Destructuring all the necessary objects from the state object.     
+        const { 
+            email, 
+            password, 
+            role, 
+            phone, 
+            gender,
+            pTChecked, 
+            surName, 
+            firstName 
+        } = this.state;
+        //create the firebase object
+        const auth = firebase.auth();
+        const db = firebase.database();
+        //Here create the new user. 
+        auth.createUserWithEmailAndPassword(email, password)
+        .then(() => console.log("Successfully created new account for " + auth))
+        .catch((error) => alert(error))
+        //Here a check is done to see if the user is authenticated!
+        .then(() => {
+            const { currentUser } = firebase.auth();
+            if(auth) {
+                db.ref(`/users/${currentUser.uid}/user_info`).set({
+                    email: email, firstName: firstName, surName: surName, phone: phone, 
+                    gender: gender, personalTrainer: pTChecked,
+                    role: role
+               })
+            } else {
+                alert("User is not authenticated, user information cannot be saved!");
+            }
+        })
+        //Save user details!
+        .then(() => Actions.main())
+        .catch((error) => alert(error));   
+    }
+
+
+                        <CardSection>
+                        <CheckBox 
+                            title="Personal Trainer"
+                            checked={this.state.checked}
+                            onIconPress={this._isPTChecked.bind(this)}
+                        /> 
+
+                    </CardSection>
+
+                        _isPTChecked(){
+        
+        // const { pTChecked, role } = this.state;
+
+        // this.setState({
+        //     pTChecked: !pTChecked,
+        //     role: 'Personal Trainer'
+        // });
+        // console.log(role);
+        // Alert.alert("You are a: " +  role);
+        
+        // if(pTChecked == true) {
+        //     this.setState({ role: 'Personal Trainer'});
+        //     console.log('Your role is _',role)
+        // }
+        const { checked } = this.state;
+        if(checked) {
+            this.setState({
+                checked: true
+            });
+            this.props.regPTChecked(checked);
+        } else {
+            this.props.regPTUnChecked(checked);
+        }
+  
+    };
+
+    export const regPTChecked = (value) => {
+    return {
+        type: PT_CHECKED,
+        payload: value
+    }
+}
+
+export const regPTUnChecked = (value) => {
+    return {
+        type: PT_UNCHECKED,
+        payload: value
+    }
+}
+
+OLD REGISTRATION AND SAVE METHOD USING REDUX IT WORKS
+const saveNewUserDetails = ({ firstName, surName, email, phoneNumber, gender, role}) => {
+    const { currentUser } = firebase.auth();
+    const db = firebase.database();
+
+    db.ref(`/users/${currentUser.uid}/user_info`)
+    .set({
+        firstName: firstName,
+        surName: surName,
+        email: email,
+        phoneNumber: phoneNumber,
+        gender: gender,
+        role: role
+    }).catch((error) => alert(error));
+    
+};
+
+export const register_new_user = ({ firstName, surName, email, password, phoneNumber, gender, role}) => {  
+    const auth = firebase.auth();
+    
+    return(dispatch) => {
+        dispatch({ type: REGISTER_NEW_USER });
+
+        //create new account
+        auth.createUserWithEmailAndPassword(email, password)
+        .then((user) => signupSuccess(dispatch, user))
+        .catch((error) => {
+            signupFail(dispatch);
+            Alert.alert(error.message);
+        })
+        
+        //extended promise is added here to avoid errors  
+        .then(() => {
+        if(auth) {
+            //call to save user details if the auth is not null.
+            saveNewUserDetails({ firstName, surName, email, phoneNumber, gender, role });
+            console.log("New User " + auth + " " + "details have been saved!");
+            
+            
+        } else {
+            Alert.alert("User must be authenticated before details are saved!");
+        }//Navigate to home page. 
+        }).then(() => Actions.main())
+        .catch((error) => alert(error));
+    
+
+    };
+
+}
+
+//Save method for client no longer being used in the AuthActions.
+
+const saveClientDetails = ({ firstName, surName, email, phoneNumber, gender, role }) => {
+    const { currentUser } = firebase.auth();
+    const db = firebase.database();
+    
+    db.ref(`clients/${currentUser.uid}`)
+    //fire.push().key()
+    .push({
+        firstName, surName,
+        email, phoneNumber,
+        gender, role
+    }).catch((error) => alert(error.message));
+    
+};
+
+export const registerNewClient = ({ firstName, surName, email, password, phoneNumber, gender, role }) => {
+    const auth = firebase.auth();
+
+    return(dispatch) => {
+        dispatch({ type: REGISTER_NEW_CLIENT });
+        
+        //Create new user 
+        auth.createUserWithEmailAndPassword(email,password)
+        .then((user) => signupSuccess(dispatch, user))
+        .catch((error) => {
+            signupFail(dispatch);
+            Alert.alert(error.message);
+        })
+        .then(() => {
+            if(auth) {
+                //Save New Gym Users Details.
+                saveClientDetails({ firstName, surName, email, phoneNumber, gender, role });
+                Alert.alert("Hello, your details have been saved successfully");
+            }else{
+                console.log("Details were not saved because user is not authenticated!");
+            }
+        }).then(() => Actions.main())
+        .catch((error) => alert(error.message));
+        
+    };
+};
+
+/*
+Resources to refer to for understanding of firebase
+https://www.youtube.com/watch?v=ran_Ylug7AE
+https://www.youtube.com/watch?v=Idu9EJPSxiY
+*/

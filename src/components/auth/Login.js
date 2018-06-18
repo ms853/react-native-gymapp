@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { Text, View, ImageBackground, 
-    Image, StyleSheet, TouchableOpacity, 
+import { Text, View, ImageBackground, StyleSheet, TouchableOpacity, 
     ScrollView, KeyboardAvoidingView } from "react-native";
 import { Actions } from 'react-native-router-flux';
-import { Header } from "react-native-elements";
 import { connect } from 'react-redux';
 import { emailAltered, passwordAltered, loginUser, facebookLogin, email_validator, password_validator } from '../../actions/AuthAction';
 import { RkButton } from "react-native-ui-kitten";
@@ -77,8 +75,8 @@ class Login extends Component {
             errorTextStyle,
             textStyle,
             linkContent
-            } = styles;
-        //require('../assets/images/barbell-bodybuild.jpg')
+        } = styles;
+        
 
         const { error } = this.props;
         return(
@@ -102,6 +100,7 @@ class Login extends Component {
                                 <Input 
                                 label="Email"
                                 placeholder="email@mail.com"
+                                autoCapitalize="none"
                                 onChangeText={this.onEmailChanged.bind(this)}
                                 value={this.props.email}
                                 />
@@ -120,8 +119,12 @@ class Login extends Component {
                                 {error}
                             </Text>
                             </KeyboardAvoidingView>
-                            
-                            <View style={linkContent}>
+                                
+                                {this.buttonRender()}
+
+                              <RkButton rkType="xlarge" onPress={this._loginFB.bind(this)}>Connect with Facebook</RkButton>     
+                              
+                              <View style={linkContent}>
                                 <Text style={textStyle}>Don't have an account? </Text>    
                                 <TouchableOpacity  onPress={() => Actions.register()}>
                                     <Text style={linkStyle}> Create An Account </Text>
@@ -130,13 +133,9 @@ class Login extends Component {
                                 <TouchableOpacity  onPress={() => Actions.forgotPass()}>
                                     <Text style={linkStyle}>Forgot your password?</Text>
                                 </TouchableOpacity>
-                       
-                                {this.buttonRender()} 
+                                
                             </View>
-
-                              <RkButton rkType="xlarge" onPress={this._loginFB.bind(this)}>Connect with Facebook</RkButton>     
                         </View>
-                   
                 </View>   
                 </KeyboardAvoidingView>
 
@@ -198,9 +197,10 @@ const styles = StyleSheet.create({
         fontSize: 15
     },
     linkStyle: {
-        fontSize: 15,
-        fontWeight: 'bold',
+        fontSize: 17,
+        fontWeight: '300',
         flexDirection: 'row',
+        color: '#FFFF'
     }, 
     
     linkContent: {

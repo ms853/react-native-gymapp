@@ -1,63 +1,44 @@
 import React, { Component } from 'react';
-import { ImageBackground, Text, View, StyleSheet } from 'react-native';
-import { Header } from "../components/reusable";
+import { ImageBackground, Text, View, TouchableWithoutFeedback } from 'react-native';
+import { Header, CardSection } from "../components/reusable";
 import { Actions } from 'react-native-router-flux';
 import { RkButton } from "react-native-ui-kitten";
-class Welcome extends Component{
+
+export default class clientListItem extends Component{
+   
+    _onListItemPress() {
+        //Navigate to the employee edit component. 
+        Actions.editClient({ client: this.props.client });
+    }
+
     render(){
         //ES6 Destructuring
-        const { logo, backgroundImage, buttonSyle, containerStyle, buttonView } = styles;
-
-        return(
-            <ImageBackground
-                source={require('../assets/images/barbell-bodybuild.jpg')}
-                style={backgroundImage} 
-            >        
-                <View style={containerStyle}>
-                      
-                    <Text style={ logo }> My Trainer </Text>
-                        
-                    <View style={buttonView}>
-                        <RkButton rkType='xlarge' onPress={() => Actions.auth()}>Login</RkButton>
-                    </View>
-                    <Text>Profile!</Text>
+        const {  textStyle, secondTextStyle } = styles;
+        const item  = this.props;
+        return (         
+            <TouchableWithoutFeedback onPress={this._onListItemPress.bind(this)}>
+                <View>
+                    <CardSection>
+                        <Text style={textStyle}>{item.firstName}</Text>
+                        <Text style={secondTextStyle}>{item.surName}</Text>
+                    </CardSection>
                 </View>
-            </ImageBackground>
+            </TouchableWithoutFeedback>
         );
     }
 }
 
-const styles = StyleSheet.create({
-    logo: {
-        color: 'white',
-        fontSize: 50,
-        fontWeight: 'bold',
-        fontStyle: 'italic',
-        textShadowColor: '#F8F8FF',
-        textShadowOffset: { width: 2, height: 2},
-        textShadowRadius: 20,
-        margin: 20,
-        marginBottom: 30
+const styles = {
+    textStyle: {
+        fontSize: 22,
+        paddingLeft: 10,
+        flexDirection: 'row'
     },
-    backgroundImage: {
-        height: '100%',
-        width: '100%',
-        alignSelf: 'stretch'
-    },
-    containerStyle: {
-        alignItems: 'center'
-    },
-    buttonView: {
-        alignItems: 'center',
-        margin: 50,
-        marginBottom: 0,
-        paddingBottom: 10,
-        alignSelf: 'stretch',
-        borderWidth: 1,
-        borderColor: '#fff',
-        backgroundColor: 'rgba(255,255,255,0.2)',
-    },
-    buttonSyle: {}    
-});
+    secondTextStyle: {
+        fontSize: 22,
+        paddingLeft: 15
+        //flexDirection: 'row'
+    } 
+};
 
-export default Welcome;
+//export default Welcome;

@@ -40,7 +40,7 @@ class WorkoutList extends Component{
 
     //function responsible for rendering a single row
     renderRow(exercise) {
-        return <ExerciseListItem  exercise={exercise}/> 
+        return <ExerciseListItem  exercise={exercise}/>;
     }
     
     render() {

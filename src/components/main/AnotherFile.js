@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
+import { ImageCropPicker } from 'react-native-image-crop-picker';
 
-class Profile extends Component{
+class ImagePicker extends Component{
+    
     render(){
         return(
             <View>
@@ -11,4 +13,4 @@ class Profile extends Component{
     }
 }
 
-export default Profile;
+export default ImagePicker;

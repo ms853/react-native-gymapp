@@ -35,3 +35,9 @@ export const ADD_EXERCISE_FAIL = "adding_exercise_failed";
 export const FETCH_EXERCISE_SUCCESS = "exercises_successfully_fetched";
 export const UPDATE_EXERCISE_SUCCESS= "exercise_information_updated";
 export const DELETE_EXERCISE = "exercise_deleted";
+
+export const ADD_CLIENT = "adding_new_client";
+export const ADD_CLIENT_FAIL = "failed_to_add_client"; 
+export const ADD_CLIENT_SUCCESS = "new_client_successfully_added";
+export const CLIENT_FORM_INPUT_CHANGED = "form_values_changed";
+export const FETCH_CLIENTS_SUCCESS = "successfully_retrieved_clients_from_db";

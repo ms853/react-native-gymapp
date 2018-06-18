@@ -108,37 +108,7 @@ class Profile extends Component{
             }).catch((error) => console.error(error.message));     
     
         }
-        // //read the client node in the json tree
-        // if(name == undefined) {
-        //     db.ref(`/clients/${userId}`)
-        //     .once('value')
-        //     .then((snapshot) => {
-        //         console.log('snap value => ', snapshot.val()); 
-        //         //Here I am printing the value of the snap data retrieved from the database.  
-        //         //Here I only assign the snapshot value only if it does not return empty.
-        //         if(snapshot.val() == null) {
-        //             console.log("Snapshot value is empty");
-        //         }else{
-        //              name = snapshot.val().firstName + " " + snapshot.val().surName;
-        //              email = snapshot.val().email;
-        //              gender = snapshot.val().gender;
-        //              role = snapshot.val().role;
-        //              phone = snapshot.val().phoneNumber;
-        //             //Printing the values to see if the values were successfully retrieved.
-        //             console.log("The values retrieved from firebase are: " 
-        //             + name + "\n" + email + "\n" + gender + '\n' + role + '\n' + phone);
-        //            //Then set all the states in the component.
-        //             this.setState({
-        //                 fullName: name,
-        //                 email: email,
-        //                 gender: gender,
-        //                 role: role,
-        //                 phoneNumber: phone
-        //             });
-    
-        //         }
-        //     }).catch((error) => console.error(error.message));     
-        // }
+
     };
   
     onButtonPress() {

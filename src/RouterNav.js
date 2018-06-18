@@ -11,7 +11,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import forgotPass from './components/auth/forgotPass';
-import passReset from './components/auth/passReset';
 import Home from "./components/main/Home";
 import Profile from "./components/main/Profile";
 import CameraScene from "./components/main/CameraScene";
@@ -23,13 +22,14 @@ import Nutrition from "./components/main/nutrition";
 import AddClient from "./components/main/AddClient";
 import ProfileEdit from "./components/main/ProfileEdit";
 import ClientList from './components/main/ClientList';
+import EditClient from "./components/main/EditClient";
 
 const tabIcon = ({ iconName, selected }) => {
-    return <Icon name="user" size={30} color="#900" />;
+    return <Icon name={ iconName || "user"} size={30} color='#FFFFFF' />;
 }
 
 const RouterNav = () => {
-
+    
     return (
         <Router>
             <Scene key="root" hideNavBar>
@@ -38,21 +38,21 @@ const RouterNav = () => {
                     <Scene key="login" component={Login} initial/>
                     <Scene key="register" component={Register}  />
                     <Scene key="forgotPass" component={forgotPass} />
-                    <Scene key="passReset" component={passReset} />
                 </Scene>
 
                 
                     {/* Tab Container */}
                     <Scene key="main"
                         tabs={true}
-                        tabBarStyle={{ backgroundColor: '#FFFFFF' }}
+                        tabBarStyle={styles.tabBarStyle}
                         tabBarPosition="bottom"
                     > 
-                        <Scene key="homePage" title="Home Page" icon={tabIcon}> 
+                        <Scene key="homePage" title="Home Page" icon={tabIcon} iconName="home"> 
                             <Scene           
                                 key="home"
                                 component={Home} 
                                 title="Home"
+                                
                             />
                         </Scene>
                         
@@ -68,7 +68,6 @@ const RouterNav = () => {
 
                     <Scene key="workout" >
                         <Scene key="createExercise" component={CreateWorkoutForm} title="Create Your Workout" />
-                    
                         {/*Component for workout list*/} 
                         <Scene key="workoutList"  component={WorkoutList} title="My Workout List"/>
                             
@@ -107,6 +106,8 @@ const RouterNav = () => {
                     <Scene key="addClients" title="Add Your Clients" component={AddClient} initial />
                     <Scene key="clientList" title="Your List of Clients" component={ClientList} />
                 </Scene>
+                <Scene key="editClient" title="Edit Client's Information" component={EditClient} />
+
 
                 <Scene key="profileEdit">
                     <Scene key="editProfile" title="Update Your Profile" component={ProfileEdit} />
@@ -117,5 +118,12 @@ const RouterNav = () => {
         </Router>
     );
 }
+
+const styles = {
+    tabBarStyle: {
+        backgroundColor: '#000000',
+        //fontSize: 15
+    }
+};
 
 export default RouterNav;

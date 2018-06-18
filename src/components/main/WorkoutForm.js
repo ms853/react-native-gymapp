@@ -10,9 +10,8 @@ import { Card, CardSection, Input, Button, NumberInput } from "../reusable";
 class WorkoutForm extends Component{
     
     render(){
-    
+        
         return(
- 
                 <View>
                         <CardSection>
                             <Input 

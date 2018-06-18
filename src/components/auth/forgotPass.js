@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View } from 'react-native';
+import { Text, View, Alert } from 'react-native';
 import firebase from 'firebase';
 import { Header } from "react-native-elements";
 import { Card, CardSection, Input, Button } from '../reusable';
@@ -18,8 +18,8 @@ class forgotPass extends Component{
     resetPassword() {
         const auth = firebase.auth();
         auth.sendPasswordResetEmail(this.state.email)
-            .then((user) => alert("Please check your email, and follow the link to reset your password."))
-            .catch((error) => alert(error));
+            .then(() => Alert.alert('My Trainer', "Please check your email, a password reset email has been sent to the email you have provided."))
+            .catch((error) => Alert.alert('My Trainer', error.message));
     };
 
 

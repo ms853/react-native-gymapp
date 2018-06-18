@@ -143,9 +143,9 @@ dependencies {
     compile project(':react-native-vector-icons')
     compile project(':react-native-video')
     compile fileTree(dir: "libs", include: ["*.jar"])
-    compile 'com.android.support:appcompat-v7:26.0.2'
-    compile "com.facebook.react:react-native:+"  // From node_modules
-    compile 'com.google.firebase:firebase-core:10.2.0' //from Firebase
+    api 'com.android.support:appcompat-v7:26.0.2'
+    api "com.facebook.react:react-native:+"  // From node_modules
+    //compile 'com.google.firebase:firebase-core:10.2.0' //from Firebase
    // compile 'com.google.firebase:firebase-invites:14.0.0'
 
 }
@@ -158,4 +158,4 @@ task copyDownloadableDepsToLibs(type: Copy) {
 }
 
 // Add to the bottom of the file
-apply plugin: 'com.google.gms.google-services'
+//apply plugin: 'com.google.gms.google-services'

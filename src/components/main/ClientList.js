@@ -1,81 +1,81 @@
 import React, { Component } from "react";
 import { 
     View, Text, ScrollView, 
-    FlatList, TouchableOpacity, Alert
+    ListView, FlatList, TouchableWithoutFeedback, Alert
 } from "react-native";
-import firebase from 'firebase';
+import { connect } from "react-redux";
+import { fetchClients } from '../../actions/ClientAction';
+import _ from 'lodash';
 import { Actions } from "react-native-router-flux";
 import { RkButton } from 'react-native-ui-kitten';
 import { Card, CardSection } from '../reusable';
-import PhoneInput from 'react-native-phone-input';
+import ClientListItem from "../Welcome";
 
 class ClientList extends Component{
     
-    constructor(props) {
-        super(props);
+    componentWillMount() {
+        this.props.fetchClients();
     }
 
-    componentWillMount() {}
-   
+    _onListItemPress(client) {
+        //Navigate to the employee edit component. 
+        
+        Actions.editClient({ client: this.props.client });
+    }
+
+    // renderRow({ client }) {
+    //     return <ClientListItem  client={client}/>;
+    // }
+    
     render() {
+        console.log('this here -> ', this.props);
         //Returns JSX code which is the UI
         return (
-            <ScrollView>
-                                        
-                    <CardSection>
-                        <Text style={styles.textStyle}>What is your gender?</Text>
-                    </CardSection>
-
-                    <CardSection>
-                        <Text style={styles.textStyle}>Enter Your Phone Number</Text>
-                    </CardSection>
-                    
-                    <CardSection> 
-                        <Text style={styles.textStyle}>
-                            If you are a Personal Trainer, please choose the Personal Trainer role
-                            from the choice box below.
-                        </Text>
-                    </CardSection>
-
+            
+            <ScrollView>                   
+                <FlatList 
+                    data={this.props.clientData}
+                    renderItem={({ item }) => (
+                        //item has access to all the attributes in the form. 
+                    <TouchableWithoutFeedback onPress={item => this._onListItemPress(item)}>
+                        <View>
+                            <CardSection>
+                                <Text style={styles.textStyle}>{item.firstName}</Text>
+                                <Text style={styles.secondTextStyle}>{item.surName}</Text>
+                            </CardSection>
+                        </View>
+                    </TouchableWithoutFeedback>
+                    )}
+                />
             </ScrollView>    
         );
     }
 }
 
-//Stylesheet object 
+/*
+
+*/
+
 const styles = {
-    
+
     textStyle: {
-        fontSize: 15
+        fontSize: 22,
+        paddingLeft: 10,
+        flexDirection: 'row'
     },
 
-    spinnerStyle: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-
-    phoneContainerStyle: {
-        flex: 1,
-        alignItems: "center",
-        padding: 20,
-        paddingTop: 20,
-        backgroundColor: 'white'
-    },
-
-    errorTextStyle: {
-        fontSize: 15,
-        color: 'red',
-        backgroundColor: 'rgba(255,255,255,1)'
-    },
-
-    buttonStyle: {
-        margin: 10,
-        padding: 5,
-        borderWidth: 1,
-        backgroundColor: 'black'//'rgba(255,255,255,0.6)'
-    },
+    secondTextStyle: {
+        fontSize: 22,
+        paddingLeft: 15
+    } 
 };
 
+const mapStateToProps = state => {
+    const clientData = _.map(state.clients, (value, uid) => ({
+        ...value,
+        key: uid //here I am setting the key to the uid in order for it to be rendered in the flatlist. 
+    }));
+    return { clientData };
+ };
 
-export default ClientList;
+export default connect(mapStateToProps, { fetchClients })(ClientList);

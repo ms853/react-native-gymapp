@@ -223,8 +223,7 @@ export const registerNewPersonalTrainer = ({ firstName, surName, email, password
         })
         .then(() => {
             if(auth) {
-               // const { currentUser } = auth;
-                //user = currentUser.email;
+
                 //Save New Gym Users Details.
                 savePTDetails({ firstName, surName, email, phoneNumber, gender, role });
                 Alert.alert("Hello, your details have been saved successfully");
@@ -299,8 +298,6 @@ const saveGymUserDetails = ({ firstName, surName, email, phoneNumber, gender, ro
 const savePTDetails = ({ firstName, surName, email, phoneNumber, gender, role }) => {
     const { currentUser } = firebase.auth();
     const db = firebase.database();
-    //Get the new push key as the client id
-    //var clientId = db.ref().child('clients').push().key(); 
 
     db.ref(`personal_trainers/${currentUser.uid}`)
     .set({
