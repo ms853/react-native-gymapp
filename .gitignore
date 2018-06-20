@@ -41,8 +41,6 @@ buck-out/
 \.buckd/
 *.keystore
 
-#Package-Dependencies
-*package-lock.json
 
 # fastlane
 #
@@ -54,3 +52,5 @@ buck-out/
 */fastlane/report.xml
 */fastlane/Preview.html
 */fastlane/screenshots
+
+package-lock.json
