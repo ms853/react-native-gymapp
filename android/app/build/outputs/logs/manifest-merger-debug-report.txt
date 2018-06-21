@@ -1,19 +1,19 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:1-55:12
-INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:1-55:12
-INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:1-55:12
-INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:1-55:12
-MERGED from [:react-native-fbsdk] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:21:1-30:12
-MERGED from [:react-native-vector-icons] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
-MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f4ded8eb2684eb0c887537e1cb2400cc\AndroidManifest.xml:2:1-15:12
-MERGED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\0218903d1bd7ee5c5e863b4c524fb28e\AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-login:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.33.0.aar\ee7181219663ab46e63d13d919a4733b\AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-share:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-share-4.33.0.aar\772c647d46edefe6ed880bf420705ada\AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-common:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\e905b52d6a0d56d3036e7d6a2083f0ca\AndroidManifest.xml:21:1-36:12
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:1-55:12
+INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:1-55:12
+INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:1-55:12
+INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:1-55:12
+MERGED from [:react-native-fbsdk] C:\Users\User\react-native-gymapp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:21:1-30:12
+MERGED from [:react-native-vector-icons] C:\Users\User\react-native-gymapp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f8be29247227ad865efbf456e58f01b2\AndroidManifest.xml:2:1-15:12
+MERGED from [com.facebook.android:facebook-android-sdk:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.34.0.aar\802afae08eabb300c6a47db79cb4c231\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-login:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.34.0.aar\360ebe9e3e26f24c0ca23a452f800832\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-share:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-share-4.34.0.aar\d6ed089326fe947a6287eb11093d5b3d\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:21:1-37:12
 MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\0145da1b3873dacf5691e15352eaa921\AndroidManifest.xml:17:1-22:12
-MERGED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-20:12
-MERGED from [:react-native-video] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-video\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-20:12
+MERGED from [:react-native-video] C:\Users\User\react-native-gymapp\node_modules\react-native-video\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\b226faee8722cc994c659970160164c9\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\f1749afbd8fa2f04738386df2f04e196\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-vision:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-vision-12.0.1.aar\9786d34524a79eefb68595c54f41b067\AndroidManifest.xml:2:1-9:12
@@ -24,10 +24,11 @@ MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\User
 MERGED from [com.android.support:support-v4:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-v4-27.0.2.aar\197720b23b493145f7b3cc4ff3e567e3\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\cdc9c26fd3a8d36910314ddcea952238\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\820da31d4b6db9e07e8549651e22c8f8\AndroidManifest.xml:17:1-22:12
-MERGED from [com.facebook.android:facebook-places:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-places-4.33.0.aar\b899440524b8ffffab26ffade468854d\AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-applinks:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.33.0.aar\1360f67bdf8c92765e19c0b2f484a593\AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-messenger:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.33.0.aar\457b4e9fdb6c588dbbc2a9078d8b56bb\AndroidManifest.xml:21:1-31:12
-MERGED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:21:1-53:12
+MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\e1df9b5cc216d7b00c277d7c69d6c36b\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\d2c84b113b213f79c71ccd1e29e1a2a4\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\51613c494c88a8ba441ec19ce8c4b79b\AndroidManifest.xml:21:1-31:12
+MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\cbe03e4aaf66a74e942d5dbec7aa51e0\AndroidManifest.xml:21:1-35:12
+MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:21:1-53:12
 MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\ac07df05cea0eb4eb034755e15283ca5\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\0ca61a97da112fb2671f1aaba803ea79\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.0.2.aar\68ae062346e876cf11f206be368c82a1\AndroidManifest.xml:17:1-22:12
@@ -51,57 +52,57 @@ MERGED from [com.google.android.gms:play-services-basement-license:12.0.1] C:\Us
 MERGED from [com.google.android.gms:play-services-vision-common-license:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-license-12.0.1.aar\12da5bee1f48ef4dd94036219261e2d2\AndroidManifest.xml:17:1-24:12
 MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\User\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\fc94fbc2655cec31827d41165591ca6f\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.1.aar\462aac9e9c20e82b83f2a8ee582d6dcb\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:1-55:12
-INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:1-55:12
-INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:1-55:12
+INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:1-55:12
+INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:1-55:12
+INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:1-55:12
 	package
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:2:5-25
-		INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:2:5-25
+		INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:4:5-30
-		INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:4:5-30
+		INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:11-69
 	android:versionCode
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:3:5-28
-		INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:3:5-28
+		INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:6:5-67
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:6:5-67
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:6:22-64
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:7:5-77
-MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f4ded8eb2684eb0c887537e1cb2400cc\AndroidManifest.xml:11:5-78
-MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f4ded8eb2684eb0c887537e1cb2400cc\AndroidManifest.xml:11:5-78
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:7:5-77
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f8be29247227ad865efbf456e58f01b2\AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f8be29247227ad865efbf456e58f01b2\AndroidManifest.xml:11:5-78
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:7:22-75
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:7:22-75
 uses-sdk
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:9:5-11:41
-INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:9:5-11:41
-INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:9:5-11:41
-MERGED from [:react-native-fbsdk] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:24:5-26:41
-MERGED from [:react-native-fbsdk] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:24:5-26:41
-MERGED from [:react-native-vector-icons] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-vector-icons] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f4ded8eb2684eb0c887537e1cb2400cc\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f4ded8eb2684eb0c887537e1cb2400cc\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\0218903d1bd7ee5c5e863b4c524fb28e\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\0218903d1bd7ee5c5e863b4c524fb28e\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-login:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.33.0.aar\ee7181219663ab46e63d13d919a4733b\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-login:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.33.0.aar\ee7181219663ab46e63d13d919a4733b\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-share:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-share-4.33.0.aar\772c647d46edefe6ed880bf420705ada\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-share:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-share-4.33.0.aar\772c647d46edefe6ed880bf420705ada\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-common:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\e905b52d6a0d56d3036e7d6a2083f0ca\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-common:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\e905b52d6a0d56d3036e7d6a2083f0ca\AndroidManifest.xml:24:5-26:41
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:9:5-11:41
+INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:9:5-11:41
+INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:9:5-11:41
+MERGED from [:react-native-fbsdk] C:\Users\User\react-native-gymapp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:24:5-26:41
+MERGED from [:react-native-fbsdk] C:\Users\User\react-native-gymapp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:24:5-26:41
+MERGED from [:react-native-vector-icons] C:\Users\User\react-native-gymapp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] C:\Users\User\react-native-gymapp\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f8be29247227ad865efbf456e58f01b2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f8be29247227ad865efbf456e58f01b2\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.34.0.aar\802afae08eabb300c6a47db79cb4c231\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-android-sdk:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.34.0.aar\802afae08eabb300c6a47db79cb4c231\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-login:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.34.0.aar\360ebe9e3e26f24c0ca23a452f800832\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-login:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.34.0.aar\360ebe9e3e26f24c0ca23a452f800832\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-share:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-share-4.34.0.aar\d6ed089326fe947a6287eb11093d5b3d\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-share:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-share-4.34.0.aar\d6ed089326fe947a6287eb11093d5b3d\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:24:5-26:41
 MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\0145da1b3873dacf5691e15352eaa921\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.0.2.aar\0145da1b3873dacf5691e15352eaa921\AndroidManifest.xml:20:5-44
-MERGED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-video] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-video\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:react-native-video] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-video\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-video] C:\Users\User\react-native-gymapp\node_modules\react-native-video\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-video] C:\Users\User\react-native-gymapp\node_modules\react-native-video\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\b226faee8722cc994c659970160164c9\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\b226faee8722cc994c659970160164c9\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\f1749afbd8fa2f04738386df2f04e196\AndroidManifest.xml:20:5-44
@@ -122,14 +123,16 @@ MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\User\.gra
 MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.0.2.aar\cdc9c26fd3a8d36910314ddcea952238\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\820da31d4b6db9e07e8549651e22c8f8\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-fragment-27.0.2.aar\820da31d4b6db9e07e8549651e22c8f8\AndroidManifest.xml:20:5-44
-MERGED from [com.facebook.android:facebook-places:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-places-4.33.0.aar\b899440524b8ffffab26ffade468854d\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-places:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-places-4.33.0.aar\b899440524b8ffffab26ffade468854d\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-applinks:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.33.0.aar\1360f67bdf8c92765e19c0b2f484a593\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-applinks:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.33.0.aar\1360f67bdf8c92765e19c0b2f484a593\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-messenger:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.33.0.aar\457b4e9fdb6c588dbbc2a9078d8b56bb\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-messenger:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.33.0.aar\457b4e9fdb6c588dbbc2a9078d8b56bb\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:24:5-26:41
-MERGED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\e1df9b5cc216d7b00c277d7c69d6c36b\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\e1df9b5cc216d7b00c277d7c69d6c36b\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\d2c84b113b213f79c71ccd1e29e1a2a4\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\d2c84b113b213f79c71ccd1e29e1a2a4\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\51613c494c88a8ba441ec19ce8c4b79b\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\51613c494c88a8ba441ec19ce8c4b79b\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\cbe03e4aaf66a74e942d5dbec7aa51e0\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\cbe03e4aaf66a74e942d5dbec7aa51e0\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:24:5-26:41
+MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:24:5-26:41
 MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\ac07df05cea0eb4eb034755e15283ca5\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.0.2.aar\ac07df05cea0eb4eb034755e15283ca5\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\User\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.0.2.aar\0ca61a97da112fb2671f1aaba803ea79\AndroidManifest.xml:20:5-44
@@ -174,30 +177,30 @@ MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\User\.gradle\caches\
 MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\User\.gradle\caches\transforms-1\files-1.1\runtime-1.0.3.aar\fc94fbc2655cec31827d41165591ca6f\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.1.aar\462aac9e9c20e82b83f2a8ee582d6dcb\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.1.aar\462aac9e9c20e82b83f2a8ee582d6dcb\AndroidManifest.xml:20:5-44
-INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:9:5-11:41
-INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:9:5-11:41
+INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:9:5-11:41
+INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:9:5-11:41
 	android:targetSdkVersion
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:11:9-38
-		INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:11:9-38
+		INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:10:9-35
-		INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:10:9-35
+		INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml
 application
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:13:5-53:19
-MERGED from [:react-native-fbsdk] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:28:5-20
-MERGED from [:react-native-fbsdk] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:28:5-20
-MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f4ded8eb2684eb0c887537e1cb2400cc\AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f4ded8eb2684eb0c887537e1cb2400cc\AndroidManifest.xml:13:5-20
-MERGED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\0218903d1bd7ee5c5e863b4c524fb28e\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\0218903d1bd7ee5c5e863b4c524fb28e\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-login:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.33.0.aar\ee7181219663ab46e63d13d919a4733b\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-login:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.33.0.aar\ee7181219663ab46e63d13d919a4733b\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-share:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-share-4.33.0.aar\772c647d46edefe6ed880bf420705ada\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-share:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-share-4.33.0.aar\772c647d46edefe6ed880bf420705ada\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-common:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\e905b52d6a0d56d3036e7d6a2083f0ca\AndroidManifest.xml:28:5-34:19
-MERGED from [com.facebook.android:facebook-common:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\e905b52d6a0d56d3036e7d6a2083f0ca\AndroidManifest.xml:28:5-34:19
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:13:5-53:19
+MERGED from [:react-native-fbsdk] C:\Users\User\react-native-gymapp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:28:5-20
+MERGED from [:react-native-fbsdk] C:\Users\User\react-native-gymapp\node_modules\react-native-fbsdk\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:28:5-20
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f8be29247227ad865efbf456e58f01b2\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.54.4] C:\Users\User\.gradle\caches\transforms-1\files-1.1\react-native-0.54.4.aar\f8be29247227ad865efbf456e58f01b2\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.android:facebook-android-sdk:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.34.0.aar\802afae08eabb300c6a47db79cb4c231\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-android-sdk:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.34.0.aar\802afae08eabb300c6a47db79cb4c231\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-login:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.34.0.aar\360ebe9e3e26f24c0ca23a452f800832\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-login:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-login-4.34.0.aar\360ebe9e3e26f24c0ca23a452f800832\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-share:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-share-4.34.0.aar\d6ed089326fe947a6287eb11093d5b3d\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-share:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-share-4.34.0.aar\d6ed089326fe947a6287eb11093d5b3d\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:28:5-35:19
+MERGED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:28:5-35:19
 MERGED from [com.google.android.gms:play-services-vision:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-vision-12.0.1.aar\9786d34524a79eefb68595c54f41b067\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-vision:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-vision-12.0.1.aar\9786d34524a79eefb68595c54f41b067\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-vision-common:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-12.0.1.aar\87a4565733daa49e99fdfe64c1965765\AndroidManifest.xml:7:5-20
@@ -208,14 +211,16 @@ MERGED from [com.google.android.gms:play-services-tasks:12.0.1] C:\Users\User\.g
 MERGED from [com.google.android.gms:play-services-tasks:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-tasks-12.0.1.aar\449dd33d1718af1c0b8a1f19b7dfc087\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\8f5a8b5e6315f8c80de320a1b94ce4c9\AndroidManifest.xml:22:5-26:19
 MERGED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\8f5a8b5e6315f8c80de320a1b94ce4c9\AndroidManifest.xml:22:5-26:19
-MERGED from [com.facebook.android:facebook-places:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-places-4.33.0.aar\b899440524b8ffffab26ffade468854d\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-places:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-places-4.33.0.aar\b899440524b8ffffab26ffade468854d\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-applinks:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.33.0.aar\1360f67bdf8c92765e19c0b2f484a593\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-applinks:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.33.0.aar\1360f67bdf8c92765e19c0b2f484a593\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-messenger:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.33.0.aar\457b4e9fdb6c588dbbc2a9078d8b56bb\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-messenger:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.33.0.aar\457b4e9fdb6c588dbbc2a9078d8b56bb\AndroidManifest.xml:28:5-29:19
-MERGED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:28:5-51:19
-MERGED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:28:5-51:19
+MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\e1df9b5cc216d7b00c277d7c69d6c36b\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-places:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-places-4.34.0.aar\e1df9b5cc216d7b00c277d7c69d6c36b\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\d2c84b113b213f79c71ccd1e29e1a2a4\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-applinks:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-applinks-4.34.0.aar\d2c84b113b213f79c71ccd1e29e1a2a4\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\51613c494c88a8ba441ec19ce8c4b79b\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-messenger:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-messenger-4.34.0.aar\51613c494c88a8ba441ec19ce8c4b79b\AndroidManifest.xml:28:5-29:19
+MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\cbe03e4aaf66a74e942d5dbec7aa51e0\AndroidManifest.xml:28:5-33:19
+MERGED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\cbe03e4aaf66a74e942d5dbec7aa51e0\AndroidManifest.xml:28:5-33:19
+MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:28:5-51:19
+MERGED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:28:5-51:19
 MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\d38e3f2745b5215376fe7cdc8d12ae75\AndroidManifest.xml:3:3-17
 MERGED from [com.facebook.soloader:soloader:0.1.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\soloader-0.1.0.aar\d38e3f2745b5215376fe7cdc8d12ae75\AndroidManifest.xml:3:3-17
 MERGED from [org.webkit:android-jsc:r174650] C:\Users\User\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\18df69b1821d6f98b75ff02c73ce35d9\AndroidManifest.xml:2:3-17
@@ -231,107 +236,109 @@ MERGED from [com.google.android.gms:play-services-vision-common-license:12.0.1] 
 MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.1.aar\462aac9e9c20e82b83f2a8ee582d6dcb\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-tasks-license:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-tasks-license-12.0.1.aar\462aac9e9c20e82b83f2a8ee582d6dcb\AndroidManifest.xml:22:5-20
 	android:supportsRtl
-		ADDED from [com.facebook.android:facebook-android-sdk:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.33.0.aar\0218903d1bd7ee5c5e863b4c524fb28e\AndroidManifest.xml:28:18-44
+		ADDED from [com.facebook.android:facebook-android-sdk:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-android-sdk-4.34.0.aar\802afae08eabb300c6a47db79cb4c231\AndroidManifest.xml:28:18-44
 	android:label
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:16:7-39
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:16:7-39
 	android:icon
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:17:7-41
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:17:7-41
 	android:allowBackup
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:15:7-33
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:15:7-33
 	android:theme
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:18:7-38
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:18:7-38
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:14:7-38
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:14:7-38
 activity#com.gymapp.MainActivity
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:19:7-34:18
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:19:7-34:18
 	android:label
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:21:9-41
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:21:9-41
 	android:windowSoftInputMode
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:23:9-51
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:23:9-51
 	android:configChanges
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:22:9-79
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:22:9-79
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:20:9-37
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:20:9-37
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:24:9-27:25
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:24:9-27:25
 action#android.intent.action.MAIN
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:25:13-65
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:25:13-65
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:25:21-62
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:25:21-62
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:26:13-73
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:26:13-73
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:26:23-70
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:26:23-70
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:28:11-33:27
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:28:11-33:27
 	android:autoVerify
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:28:26-51
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:28:26-51
 action#android.intent.action.VIEW
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:29:15-66
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:29:15-66
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:29:23-64
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:29:23-64
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:30:15-73
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:30:15-73
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:30:25-71
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:30:25-71
 category#android.intent.category.BROWSABLE
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:31:15-75
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:31:15-75
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:31:25-73
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:31:25-73
 data
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:32:15-83
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:32:15-83
 	android:host
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:32:21-59
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:32:21-59
 	android:scheme
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:32:60-81
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:32:60-81
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:35:7-84
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:35:7-84
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:35:17-81
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:35:17-81
 meta-data#com.facebook.sdk.ApplicationId
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:37:7-38:50
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:37:7-38:50
 	android:value
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:38:9-48
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:38:9-48
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:37:18-63
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:37:18-63
 activity#com.facebook.FacebookActivity
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:39:9-42:48
-MERGED from [com.facebook.android:facebook-common:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\e905b52d6a0d56d3036e7d6a2083f0ca\AndroidManifest.xml:29:9-32:66
-MERGED from [com.facebook.android:facebook-common:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\e905b52d6a0d56d3036e7d6a2083f0ca\AndroidManifest.xml:29:9-32:66
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:39:9-42:48
+MERGED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:29:9-32:66
+MERGED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:29:9-32:66
 	android:label
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:42:13-45
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:42:13-45
 	android:configChanges
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:40:13-118
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:40:13-118
 	android:theme
-		ADDED from [com.facebook.android:facebook-common:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\e905b52d6a0d56d3036e7d6a2083f0ca\AndroidManifest.xml:32:13-63
+		ADDED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:32:13-63
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:39:19-63
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:39:19-63
 activity#com.facebook.CustomTabActivity
-ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:43:9-52:20
+ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:43:9-52:20
+MERGED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:34:9-67
+MERGED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:34:9-67
 	android:exported
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:45:13-36
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:45:13-36
 	android:name
-		ADDED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:44:13-58
+		ADDED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:44:13-58
 activity#com.facebook.CustomTabMainActivity
-ADDED from [com.facebook.android:facebook-common:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\e905b52d6a0d56d3036e7d6a2083f0ca\AndroidManifest.xml:33:9-71
+ADDED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:33:9-71
 	android:name
-		ADDED from [com.facebook.android:facebook-common:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.33.0.aar\e905b52d6a0d56d3036e7d6a2083f0ca\AndroidManifest.xml:33:19-68
+		ADDED from [com.facebook.android:facebook-common:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-common-4.34.0.aar\5665abc46f7dadc917faa2d5352a2bef\AndroidManifest.xml:33:19-68
 uses-permission#android.permission.CAMERA
-ADDED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-65
+ADDED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:5-65
 	android:name
-		ADDED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:22-62
+		ADDED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:11:22-62
 uses-feature#android.hardware.camera
-ADDED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:5-15:36
+ADDED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:13:5-15:36
 	android:required
-		ADDED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:15:9-33
+		ADDED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:15:9-33
 	android:name
-		ADDED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:14:9-47
+		ADDED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:14:9-47
 uses-feature#android.hardware.camera.autofocus
-ADDED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:16:5-18:36
+ADDED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:16:5-18:36
 	android:required
-		ADDED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:18:9-33
+		ADDED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:18:9-33
 	android:name
-		ADDED from [:react-native-camera] C:\Users\User\react-native-gym-project\GymApp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:17:9-57
+		ADDED from [:react-native-camera] C:\Users\User\react-native-gymapp\node_modules\react-native-camera\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:17:9-57
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-base-12.0.1.aar\7322df4e5400767e18b308df5b3623a5\AndroidManifest.xml:23:9-26:75
 	android:exported
@@ -346,29 +353,37 @@ ADDED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\User\
 		ADDED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\8f5a8b5e6315f8c80de320a1b94ce4c9\AndroidManifest.xml:25:13-66
 	android:name
 		ADDED from [com.google.android.gms:play-services-basement:12.0.1] C:\Users\User\.gradle\caches\transforms-1\files-1.1\play-services-basement-12.0.1.aar\8f5a8b5e6315f8c80de320a1b94ce4c9\AndroidManifest.xml:24:13-58
-provider#com.facebook.internal.FacebookInitProvider
-ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:39:9-42:40
+provider#com.facebook.marketing.internal.MarketingInitProvider
+ADDED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\cbe03e4aaf66a74e942d5dbec7aa51e0\AndroidManifest.xml:29:9-32:40
 	android:authorities
-		ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:41:13-72
+		ADDED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\cbe03e4aaf66a74e942d5dbec7aa51e0\AndroidManifest.xml:31:13-73
 	android:exported
-		ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:42:13-37
+		ADDED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\cbe03e4aaf66a74e942d5dbec7aa51e0\AndroidManifest.xml:32:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:40:13-70
+		ADDED from [com.facebook.android:facebook-marketing:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-marketing-4.34.0.aar\cbe03e4aaf66a74e942d5dbec7aa51e0\AndroidManifest.xml:30:13-81
+provider#com.facebook.internal.FacebookInitProvider
+ADDED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:39:9-42:40
+	android:authorities
+		ADDED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:41:13-72
+	android:exported
+		ADDED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:42:13-37
+	android:name
+		ADDED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:40:13-70
 receiver#com.facebook.CurrentAccessTokenExpirationBroadcastReceiver
-ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:44:9-50:20
+ADDED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:44:9-50:20
 	android:exported
-		ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:46:13-37
+		ADDED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:46:13-37
 	android:name
-		ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:45:13-86
+		ADDED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:45:13-86
 intent-filter#com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:47:13-49:29
+ADDED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:47:13-49:29
 action#com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED
-ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:48:17-95
+ADDED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:48:17-95
 	android:name
-		ADDED from [com.facebook.android:facebook-core:4.33.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.33.0.aar\7f582b5b1e907a22a364de050611d4f8\AndroidManifest.xml:48:25-92
+		ADDED from [com.facebook.android:facebook-core:4.34.0] C:\Users\User\.gradle\caches\transforms-1\files-1.1\facebook-core-4.34.0.aar\0f0cafab079c7cfa88986e5a03ce1804\AndroidManifest.xml:48:25-92
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:1-55:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:1-55:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:1-55:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:1-55:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from C:\Users\User\react-native-gym-project\GymApp\android\app\src\main\AndroidManifest.xml:1:1-55:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
+IMPLIED from C:\Users\User\react-native-gymapp\android\app\src\main\AndroidManifest.xml:1:1-55:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE

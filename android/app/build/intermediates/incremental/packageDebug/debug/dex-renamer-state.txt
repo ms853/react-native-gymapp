@@ -1,7 +1,7 @@
-#Thu Jun 07 11:08:54 BST 2018
-base.0=C\:\\Users\\User\\react-native-gym-project\\GymApp\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+#Wed Jun 20 16:26:27 BST 2018
+base.0=C\:\\Users\\User\\react-native-gymapp\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.1=classes2.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\User\\react-native-gym-project\\GymApp\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+base.1=C\:\\Users\\User\\react-native-gymapp\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
