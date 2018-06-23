@@ -30,7 +30,8 @@ const styles = {
         paddingLeft: 20,
         lineHeight: 30,
         flex: 2,
-        backgroundColor: 'rgba(255,255,255,1)'
+        backgroundColor: 'rgba(255,255,255,1)',
+        borderRadius: 5
     },
     labelStyle: {
         fontSize: 17,
