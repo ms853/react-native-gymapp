@@ -25,8 +25,7 @@ import {
     REGISTER_NEW_USER_FAIL,
     REGISTER_NEW_USER_SUCCESS,
     VALID_NAME,
-    INVALID_NAME,
-    REGISTER_NEW_CLIENT
+    INVALID_NAME
 } from "./types";
 
 
