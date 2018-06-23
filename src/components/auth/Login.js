@@ -66,7 +66,7 @@ class Login extends Component {
         
         //ES6 Destructuring     
         const { 
-            containerStyle, 
+            loginForm, 
             backgroundImg, 
             content, 
             logo, 
@@ -96,25 +96,25 @@ class Login extends Component {
                         <View style={ inputContainer }>
                             <KeyboardAvoidingView behavior="padding" enabled> 
 
-                            <CardSection>
+                            <View style={loginForm}>
                                 <Input 
-                                label="Email"
-                                placeholder="email@mail.com"
-                                autoCapitalize="none"
-                                onChangeText={this.onEmailChanged.bind(this)}
-                                value={this.props.email}
+                                    label="Email"
+                                    placeholder="email@mail.com"
+                                    autoCapitalize="none"
+                                    onChangeText={this.onEmailChanged.bind(this)}
+                                    value={this.props.email}
                                 />
-                            </CardSection>
+                            </View>
                            
-                            <CardSection>
-                            <Input
-                            label="Password"
-                            placeholder="enter password"
-                            secureTextEntry={true}
-                            onChangeText={this.onPasswordChanged.bind(this)}
-                            value={this.props.password}
-                            />
-                            </CardSection>
+                           <View style={loginForm}>
+                                <Input
+                                    label="Password"
+                                    placeholder="enter password"
+                                    secureTextEntry={true}
+                                    onChangeText={this.onPasswordChanged.bind(this)}
+                                    value={this.props.password}
+                                />
+                           </View>
                             <Text style={ errorTextStyle }>
                                 {error}
                             </Text>
@@ -159,6 +159,9 @@ const styles = StyleSheet.create({
     },
     content: {
         alignItems: 'center'     
+    },
+    loginForm: {
+        paddingBottom: 10
     },
     logo: {
         color: 'white',
