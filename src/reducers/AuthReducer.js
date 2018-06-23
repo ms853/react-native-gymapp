@@ -65,13 +65,13 @@ export default (state = initialState, action) => {
             return {...state, error: "Please, the password you have provided is invalid. Password must be 8 characters or longer."};
         
         case LOGIN_USER_FAIL:
-            Alert.alert('Invalid Email or Password!');
+            Alert.alert('My Trainer', 'Invalid Email or Password!');
             return { ...state, password: '', error: 'The email or password you have entered is invalid. Please try again.', 
             loading: false,
         };
 
         case USER_LOGOUT: 
-            Alert.alert('You have logged out!');
+            Alert.alert('My Trainer', 'You have logged out!');
             return { ...state, user: action.payload };
         
         case FACEBOOK_LOGIN:
