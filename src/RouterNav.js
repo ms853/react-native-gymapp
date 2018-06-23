@@ -23,9 +23,11 @@ import AddClient from "./components/main/AddClient";
 import ProfileEdit from "./components/main/ProfileEdit";
 import ClientList from './components/main/ClientList';
 import EditClient from "./components/main/EditClient";
+import Settings from "./components/main/Settings";
 
+//functional component that  displaying icons for tabbar
 const tabIcon = ({ iconName, selected }) => {
-    return <Icon name={ iconName || "user"} size={30} color='#FFFFFF' />;
+    return <Icon name={ iconName } size={30} color='#FFFFFF' />;
 }
 
 const RouterNav = () => {
@@ -51,16 +53,23 @@ const RouterNav = () => {
                             <Scene           
                                 key="home"
                                 component={Home} 
-                                title="Home"
-                                
+                                title="Home"   
                             />
                         </Scene>
                         
-                        <Scene key="profilePage" title="My Profile" icon={tabIcon} >
+                        <Scene key="profilePage" title="My Profile" icon={tabIcon} iconName="user">
                                 <Scene 
                                     key="profile" 
                                     component={Profile} 
                                     title="My Profile" 
+                                />
+                        </Scene>
+
+                        <Scene key="settings" title="Settings" icon={tabIcon} iconName="cog" >
+                                <Scene 
+                                    key="settings" 
+                                    component={Settings} 
+                                    title="Account Settings" 
                                 />
                         </Scene>
                     
@@ -121,7 +130,7 @@ const RouterNav = () => {
 
 const styles = {
     tabBarStyle: {
-        backgroundColor: '#000000',
+        backgroundColor: '#000000', //black
         //fontSize: 15
     }
 };
