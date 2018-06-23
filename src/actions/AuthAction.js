@@ -160,7 +160,6 @@ export const facebookLogin = (dispatch, user) => {
             alert(e);
         }
         
-        
     };
 };
 
