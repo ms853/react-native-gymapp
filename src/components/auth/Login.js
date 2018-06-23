@@ -5,7 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { emailAltered, passwordAltered, loginUser, facebookLogin, email_validator, password_validator } from '../../actions/AuthAction';
 import { RkButton } from "react-native-ui-kitten";
-import { Card, CardSection, Input, SpinnerLoader, Button } from "../reusable";
+import {  Input, SpinnerLoader } from "../reusable";
 //import validator from '../validator';
 
 class Login extends Component {
